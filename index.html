@@ -7,13 +7,14 @@
     <meta name="description" content="THE TEN RINGS is a frontier deep-tech and life sciences enterprise engineering computational biology, synthetic genomics, and bio-digital infrastructure for planetary health and human resilience.">
 
         <!-- Favicon SVG -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%230F291E'/%3E%3Cpath d='M19 12c25 10 25 30 0 40M45 12C20 22 20 42 45 52M24 18h16M23 30h18M24 42h16' fill='none' stroke='%2352B788' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23000000'/%3E%3Cpath d='M19 12c25 10 25 30 0 40M45 12C20 22 20 42 45 52M24 18h16M23 30h18M24 42h16' fill='none' stroke='%23ffffff' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+    <meta name="theme-color" content="#000000">
     <meta name="theme-color" content="#0F291E">
 
     <!-- Google Fonts: Plus Jakarta Sans, Space Grotesk, JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- FontAwesome 6 for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -22,39 +23,35 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
-                        display: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+                        sans: ['Inter', '"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        display: ['Inter', '"Plus Jakarta Sans"', 'sans-serif'],
                         mono: ['"JetBrains Mono"', 'monospace'],
                     },
                     colors: {
-                        obsidian: '#070A12',
-                        void: '#0B0F19',
-                        surface: '#0F172A',
-                        card: 'rgba(15, 23, 42, 0.75)',
-                        emerald: {
-                            400: '#34D399',
-                            500: '#10B981',
-                            600: '#059669',
-                            700: '#047857'
-                        },
-                        cyan: {
-                            400: '#38BDF8',
-                            500: '#06B6D4',
-                            600: '#0284C7'
-                        },
+                        black: '#000000',
+                        charcoal: '#111111',
+                        darkCard: '#181818',
+                        lightGray: '#F9FAFB',
+                        surfaceGray: '#F3F4F6',
+                        borderGray: '#E5E7EB',
+                        borderDark: '#262626',
+                        mutedText: '#6B7280',
+                        accentBlue: '#116DFF',
+                        accentGreen: '#10B981',
                         brand: {
-                            dark: '#070A12',
-                            surface: '#0F172A',
-                            emerald: '#10B981',
-                            cyan: '#06B6D4',
-                            coral: '#10B981',
-                            coralHover: '#059669',
-                            coralLight: 'rgba(16, 185, 129, 0.15)',
-                            border: 'rgba(255, 255, 255, 0.08)'
+                            black: '#000000',
+                            charcoal: '#111111',
+                            surface: '#F9FAFB',
+                            border: '#E5E7EB',
+                            muted: '#6B7280',
+                            blue: '#116DFF',
+                            green: '#10B981',
+                            coral: '#111111',
+                            coralHover: '#333333',
+                            coralLight: '#F3F4F6'
                         }
                     }
                 }
@@ -64,75 +61,64 @@
 
     <style>
         :root {
-            --bg-obsidian: #070A12;
-            --bg-surface: #0F172A;
-            --emerald-accent: #10B981;
-            --cyan-accent: #06B6D4;
-            --border-subtle: rgba(255, 255, 255, 0.08);
-            --sans: "Plus Jakarta Sans", Inter, sans-serif;
-            --mono: "JetBrains Mono", monospace;
+            --bg-body: #FFFFFF;
+            --text-primary: #000000;
+            --text-secondary: #6B7280;
+            --border-light: #E5E7EB;
+            --font-sans: "Inter", "Plus Jakarta Sans", -apple-system, sans-serif;
+            --font-mono: "JetBrains Mono", monospace;
         }
 
         body {
-            background-color: #070A12;
-            color: #F8FAFC;
+            background-color: #FFFFFF;
+            color: #000000;
             overflow-x: hidden;
-            font-family: var(--sans);
+            font-family: var(--font-sans);
             font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Minimal high-tech scrollbar */
+        /* Minimal clean scrollbar */
         ::-webkit-scrollbar {
             width: 7px;
         }
         ::-webkit-scrollbar-track {
-            background: #070A12;
+            background: #F9FAFB;
         }
         ::-webkit-scrollbar-thumb {
-            background: #1E293B;
+            background: #D1D5DB;
             border-radius: 9999px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #10B981;
+            background: #9CA3AF;
         }
 
-        /* Frosted Glass Navigation */
+        /* Monochromatic Frosted Glass Navigation */
         .glass-nav {
-            background: rgba(7, 10, 18, 0.88);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-        }
-
-        /* Ambient Cyber-Bio Mesh Gradient */
-        .hero-ambient-mesh {
-            background: 
-                radial-gradient(circle at 18% 22%, rgba(16, 185, 129, 0.12) 0%, transparent 45%),
-                radial-gradient(circle at 82% 28%, rgba(6, 182, 212, 0.11) 0%, transparent 48%),
-                radial-gradient(circle at 50% 85%, rgba(139, 92, 246, 0.06) 0%, transparent 55%),
-                #070A12;
-        }
-
-        /* Background grid */
-        .bg-grid-cyber {
-            background-image: 
-                linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
-
-        /* Glassmorphism Cards */
-        .glass-card {
-            background: rgba(15, 23, 42, 0.72);
+            background: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        /* Clean Monochromatic Grid */
+        .bg-grid-minimal {
+            background-image: 
+                linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+            background-size: 48px 48px;
+        }
+
+        /* High-Contrast Cards */
+        .monochrome-card {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
             transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .glass-card:hover {
-            border-color: rgba(16, 185, 129, 0.45);
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px -15px rgba(16, 185, 129, 0.16);
+        .monochrome-card:hover {
+            border-color: #000000;
+            transform: translateY(-3px);
+            box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.08);
         }
 
         /* 3D Tilt Card Container */
@@ -142,13 +128,13 @@
             transition: transform 0.15s ease-out;
         }
 
-        /* Dynamic Specular Sheen on 3D Emblem */
+        /* Specular Sheen on 3D Emblem */
         .glare-overlay {
             position: absolute;
             inset: 0;
             border-radius: 1.25rem;
             pointer-events: none;
-            background: radial-gradient(circle 240px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.22), transparent 75%);
+            background: radial-gradient(circle 240px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.35), transparent 75%);
             opacity: 0;
             transition: opacity 0.3s ease;
         }
@@ -156,26 +142,26 @@
             opacity: 1;
         }
 
-        /* Marquee Ticker Ribbon */
-        .marquee {
+        /* High-Contrast Marquee Ticker Ribbon */
+        .marquee-autono {
             overflow: hidden;
-            background: #05080E;
-            color: #94A3B8;
+            background: #000000;
+            color: #FFFFFF;
             padding: 16px 0;
             font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.18em;
+            font-weight: 700;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
             white-space: nowrap;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            border-top: 1px solid #222222;
+            border-bottom: 1px solid #222222;
         }
         .marquee-track {
             display: inline-flex;
             animation: marquee 35s linear infinite;
             width: max-content;
         }
-        .marquee i {
+        .marquee-autono i {
             font-style: normal;
             color: #10B981;
             margin: 0 24px;
@@ -187,26 +173,16 @@
         /* Ring Interactive Matrix Card */
         .ring-interactive-card {
             cursor: pointer;
-            transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
             user-select: none;
-            background: rgba(15, 23, 42, 0.65);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
         }
         .ring-interactive-card:hover, .ring-interactive-card.active {
-            border-color: #10B981;
-            background: rgba(16, 185, 129, 0.12);
+            border-color: #000000;
+            background: #F9FAFB;
             transform: translateY(-2px);
-            box-shadow: 0 0 25px rgba(16, 185, 129, 0.22);
-        }
-
-        /* Avatar orbital graphic in team section */
-        .avatar-orbit {
-            position: absolute;
-            width: 76%;
-            height: 38%;
-            border: 1px dashed rgba(16, 185, 129, 0.55);
-            border-radius: 50%;
-            transform: rotate(-27deg);
+            box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.08);
         }
 
         /* Toast notification */
@@ -230,11 +206,11 @@
         }
     </style>
 </head>
-<body class="selection:bg-emerald-500 selection:text-slate-950 min-h-screen bg-[#070A12] text-slate-100 font-sans">
+<body class="selection:bg-black selection:text-white min-h-screen bg-white text-black font-sans">
 
     <!-- Toast Notification Component -->
-    <div id="toast" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-slate-900 text-white px-5 py-3.5 rounded-2xl shadow-2xl font-sans text-sm border border-emerald-500/30 backdrop-blur-xl">
-        <div class="w-6 h-6 rounded-full bg-lime/20 flex items-center justify-center text-lime text-xs">
+    <div id="toast" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-black text-white px-5 py-3.5 rounded-xl shadow-2xl font-sans text-sm border border-neutral-800">
+        <div class="w-6 h-6 rounded-full w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-white text-xs">
             <i class="fa-solid fa-check"></i>
         </div>
         <span id="toast-message" class="font-medium">Action completed successfully</span>
@@ -247,7 +223,7 @@
                 
                 <!-- Logo & Brand Identity -->
                 <a href="#" class="flex items-center gap-3 group">
-                    <div class="relative w-10 h-10 rounded-xl bg-slate-900 border border-emerald-500/30 flex items-center justify-center overflow-hidden shadow-xs group-hover:border-emerald-400 transition-all">
+                    <div class="relative w-10 h-10 rounded-xl bg-black border border-black flex items-center justify-center overflow-hidden shadow-xs group-hover:scale-105 transition-transform">
                         <!-- 1. NAVBAR LOGO (Change "logo.jpg" to your own image file name if needed) -->
                         <img src="logo.jpg" 
                              alt="The Ten Rings Logo" 
@@ -256,33 +232,33 @@
                              onerror="this.onerror=null; this.src='logo.png';">
                     </div>
                     <div class="flex items-center gap-2.5">
-                        <span class="font-bold text-base tracking-wider text-white uppercase tracking-widest group-hover:text-emerald-400 transition-colors">THE TEN RINGS</span>
+                        <span class="font-extrabold text-base tracking-wider text-black uppercase tracking-widest group-hover:text-neutral-700 transition-colors">THE TEN RINGS</span>
                         <span class="w-2 h-2 rounded-full bg-lime animate-subtle-pulse" title="System Operational"></span>
                     </div>
                 </a>
 
                 <!-- Desktop Navigation Links -->
                 <nav class="hidden lg:flex items-center gap-7 font-sans text-xs uppercase tracking-widest font-semibold text-forest/80">
-                    <a href="#matrix" class="hover:text-emerald-400 transition-colors py-1">The 10 Rings</a>
-                    <a href="#pipeline" class="hover:text-emerald-400 transition-colors py-1">Active Pipeline (6)</a>
-                    <a href="#upcoming" class="hover:text-emerald-400 transition-colors py-1 flex items-center gap-1.5">
+                    <a href="#matrix" class="hover:text-black transition-colors py-1">The 10 Rings</a>
+                    <a href="#pipeline" class="hover:text-black transition-colors py-1">Active Pipeline (6)</a>
+                    <a href="#upcoming" class="hover:text-black transition-colors py-1 flex items-center gap-1.5">
                         <span>Upcoming Horizon</span>
-                        <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded font-mono text-[9px] font-bold">2027–28</span>
+                        <span class="text-[10px] font-mono text-white bg-black px-2 py-0.5 rounded font-mono text-[9px] font-bold">2027–28</span>
                     </a>
-                    <a href="#workflow" class="hover:text-emerald-400 transition-colors py-1">Bio-Compute Cycle</a>
-                    <a href="#founder" class="hover:text-emerald-400 transition-colors py-1">Leadership</a>
+                    <a href="#workflow" class="hover:text-black transition-colors py-1">Bio-Compute Cycle</a>
+                    <a href="#founder" class="hover:text-black transition-colors py-1">Leadership</a>
                 </nav>
 
                 <!-- Action CTA & Telemetry Badge -->
                 <div class="flex items-center gap-3">
                     <!-- Live Telemetry Pill -->
-                    <div id="telemetry-pill" class="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-emerald-500/30 text-xs font-mono text-emerald-400 cursor-pointer hover:bg-slate-800 transition-colors shadow-2xs" title="Click to view health telemetry">
+                    <div id="telemetry-pill" class="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-100 border border-neutral-200 text-xs font-mono text-black font-semibold cursor-pointer hover:bg-neutral-200 transition-colors">
                         <span class="w-1.5 h-1.5 rounded-full bg-lime animate-pulse"></span>
                         <span class="font-semibold">10/10 Online</span>
                     </div>
 
                     <!-- Partner With Us CTA -->
-                    <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-bold text-xs tracking-wider uppercase transition-all shadow-md shadow-emerald-500/20">
+                    <a href="#contact" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-black hover:bg-neutral-800 text-white font-bold text-xs tracking-wider uppercase transition-all shadow-sm">
                         <span>Partner With Us</span>
                         <i class="fa-solid fa-arrow-right text-[10px]"></i>
                     </a>
@@ -296,7 +272,7 @@
         </div>
 
         <!-- Mobile Drawer -->
-        <div id="mobile-menu" class="hidden lg:hidden border-t border-line bg-bone/98 backdrop-blur-xl px-6 py-5 transition-all shadow-lg">
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-neutral-200 bg-white/98 backdrop-blur-xl px-6 py-5 transition-all shadow-xl">
             <div class="flex flex-col gap-3 font-sans text-sm font-semibold">
                 <a href="#matrix" class="mobile-link text-[#A7CAB5] hover:text-forest py-2 border-b border-line/70">The 10 Rings Matrix</a>
                 <a href="#pipeline" class="mobile-link text-[#A7CAB5] hover:text-forest py-2 border-b border-line/70">Active Pipeline (6 Projects)</a>
@@ -314,68 +290,72 @@
     <main class="relative pt-18">
 
         <!-- ========================================================================= -->
-        <!-- HERO SECTION: THE TEN RINGS -->
+        <!-- HERO SECTION: THE TEN RINGS (AUTONO MONOCHROME STYLE) -->
         <!-- ========================================================================= -->
-        <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden hero-ambient-mesh border-b border-white/[0.08]">
-            <!-- Subtle Cyber Grid Background -->
-            <div class="absolute inset-0 bg-grid-cyber opacity-40 pointer-events-none"></div>
+        <section class="relative min-h-[88vh] flex items-center justify-center overflow-hidden bg-white border-b border-neutral-200">
+            <!-- Subtle Minimalist Grid Background -->
+            <div class="absolute inset-0 bg-grid-minimal opacity-60 pointer-events-none"></div>
 
             <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
                     
-                    <!-- Left Column -->
+                    <!-- Left Column: Vision & Proposition -->
                     <div class="lg:col-span-7 flex flex-col items-start">
                         
-                        <!-- Eyebrow Pill Badge -->
-                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-xs font-mono text-emerald-400 mb-8 shadow-2xs backdrop-blur-md">
-                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                            <span class="font-bold tracking-widest uppercase">BIOLOGY, COMPUTED</span>
-                            <span class="text-emerald-500 font-bold">✳</span>
-                            <span class="text-slate-300 font-semibold font-mono">EST. 2024</span>
+                        <!-- Trust Pill Badge -->
+                        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-neutral-100 border border-neutral-200 text-xs font-mono text-black mb-8 shadow-xs">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                            <span class="font-extrabold tracking-widest uppercase">BIOLOGY, COMPUTED</span>
+                            <span class="text-neutral-400 font-bold">/</span>
+                            <span class="font-mono text-neutral-600 font-bold">EST. 2024</span>
                         </div>
 
-                        <!-- Main Display Headline (Simple, Attractive, High-Impact Sans) -->
-                        <h1 class="font-extrabold text-5xl sm:text-6xl lg:text-7xl xl:text-[5.25rem] tracking-tight text-white leading-[1.06] mb-8">
-                            Where Deep Computation Meets <span class="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent block sm:inline">Programmable Biology.</span>
+                        <!-- Main Display Headline (Bold, Clean, Authoritative Sans) -->
+                        <h1 class="font-black text-5xl sm:text-6xl lg:text-7xl xl:text-[5.4rem] tracking-tight text-black leading-[1.04] mb-8">
+                            Where Deep Computation Meets <span class="underline decoration-neutral-300 underline-offset-8">Programmable Biology.</span>
                         </h1>
 
                         <!-- Subtitle -->
-                        <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed mb-10 max-w-xl">
-                            <strong class="text-white font-semibold">THE TEN RINGS</strong> is a frontier deep-tech enterprise engineering the operating system for living systems. We unite high-performance in-silico modeling, synthetic genomics, and precision biomanufacturing to solve global challenges across human health, biomaterials, and planetary ecosystems.
+                        <p class="text-base sm:text-lg text-neutral-600 font-normal leading-relaxed mb-10 max-w-xl">
+                            <strong class="text-black font-bold">THE TEN RINGS</strong> is a frontier deep-tech enterprise engineering the operating system for living systems. We unite high-performance in-silico modeling, synthetic genomics, and precision biomanufacturing to solve global challenges across human health, biomaterials, and planetary ecosystems.
                         </p>
 
-                        <!-- Primary Action Elements -->
+                        <!-- Primary Action Buttons (Autono Monochromatic Pill Buttons) -->
                         <div class="flex flex-wrap items-center gap-4 sm:gap-5 mb-12">
-                            <!-- Explore Pipeline CTA -->
-                            <a href="#pipeline" class="px-7 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-bold text-xs tracking-wider uppercase transition-all shadow-lg shadow-emerald-500/25 flex items-center gap-2.5">
+                            <!-- Explore Pipeline Button -->
+                            <a href="#pipeline" class="px-7 py-4 rounded-full bg-black hover:bg-neutral-800 text-white font-extrabold text-xs tracking-wider uppercase transition-all shadow-md flex items-center gap-2.5">
                                 <span>Explore Active Pipeline (6)</span>
                                 <i class="fa-solid fa-arrow-down text-xs"></i>
                             </a>
 
-                            <!-- Horizon Directives CTA -->
-                            <a href="#upcoming" class="px-6 py-4 rounded-2xl bg-slate-900/80 hover:bg-slate-800 text-white border border-white/10 font-semibold text-xs tracking-wider uppercase transition-all flex items-center gap-2">
-                                <i class="fa-solid fa-atom text-cyan-400 text-xs"></i>
-                                <span>Upcoming Horizon (2027–28)</span>
+                            <!-- Horizon Directives Button -->
+                            <a href="#upcoming" class="px-7 py-4 rounded-full bg-white hover:bg-neutral-50 text-black border-2 border-black font-extrabold text-xs tracking-wider uppercase transition-all flex items-center gap-2">
+                                <span>Upcoming Horizon</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
                             </a>
                         </div>
 
-                        <!-- Inline Stats Bar -->
-                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full max-w-xl pt-6 border-t border-white/[0.08] font-mono">
-                            <div class="p-3.5 rounded-2xl bg-slate-900/60 border border-white/10 shadow-2xs backdrop-blur-sm">
-                                <div class="text-[10px] text-slate-400 uppercase font-semibold">Compute Core</div>
-                                <div class="text-2xl font-bold text-white mt-0.5">10 Rings</div>
+                        <!-- Autono In Numbers Style Metric Bar -->
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full max-w-xl pt-6 border-t border-neutral-200 font-mono">
+                            <div class="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 shadow-xs">
+                                <div class="text-[10px] text-neutral-500 uppercase font-bold tracking-wider">Compute Core</div>
+                                <div class="text-3xl font-black text-black mt-1">10</div>
+                                <div class="text-[11px] text-neutral-600 font-sans mt-0.5">Rings Matrix</div>
                             </div>
-                            <div class="p-3.5 rounded-2xl bg-slate-900/60 border border-white/10 shadow-2xs backdrop-blur-sm">
-                                <div class="text-[10px] text-slate-400 uppercase font-semibold">Sequencing</div>
-                                <div class="text-2xl font-bold text-emerald-400 mt-0.5">Q40+ Acc</div>
+                            <div class="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 shadow-xs">
+                                <div class="text-[10px] text-neutral-500 uppercase font-bold tracking-wider">Sequencing</div>
+                                <div class="text-3xl font-black text-black mt-1">Q40+</div>
+                                <div class="text-[11px] text-neutral-600 font-sans mt-0.5">Accuracy Metric</div>
                             </div>
-                            <div class="p-3.5 rounded-2xl bg-slate-900/60 border border-white/10 shadow-2xs backdrop-blur-sm">
-                                <div class="text-[10px] text-slate-400 uppercase font-semibold">Active Systems</div>
-                                <div class="text-2xl font-bold text-cyan-400 mt-0.5">6 Pipeline</div>
+                            <div class="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 shadow-xs">
+                                <div class="text-[10px] text-neutral-500 uppercase font-bold tracking-wider">Active Systems</div>
+                                <div class="text-3xl font-black text-black mt-1">06</div>
+                                <div class="text-[11px] text-neutral-600 font-sans mt-0.5">Production Stack</div>
                             </div>
-                            <div class="p-3.5 rounded-2xl bg-slate-900/60 border border-white/10 shadow-2xs backdrop-blur-sm">
-                                <div class="text-[10px] text-slate-400 uppercase font-semibold">Horizon R&D</div>
-                                <div class="text-2xl font-bold text-purple-400 mt-0.5">4 Projects</div>
+                            <div class="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 shadow-xs">
+                                <div class="text-[10px] text-neutral-500 uppercase font-bold tracking-wider">Horizon R&D</div>
+                                <div class="text-3xl font-black text-black mt-1">04</div>
+                                <div class="text-[11px] text-neutral-600 font-sans mt-0.5">Directives 27-28</div>
                             </div>
                         </div>
 
@@ -383,27 +363,24 @@
 
                     <!-- Right Column: Interactive 3D Emblem Showcase Card -->
                     <div class="lg:col-span-5 flex flex-col items-center">
-                        <div id="hero-medallion-container" class="tilt-container relative w-full max-w-[460px] bg-slate-900/70 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl p-5 sm:p-6 transition-transform duration-200 ease-out cursor-pointer group">
+                        <div id="hero-medallion-container" class="tilt-container relative w-full max-w-[460px] bg-white rounded-3xl border border-neutral-200 shadow-2xl p-6 transition-transform duration-200 ease-out cursor-pointer group">
                             
                             <!-- Card Header -->
-                            <div class="w-full flex items-center justify-between pb-3.5 mb-4 border-b border-white/[0.08]">
+                            <div class="w-full flex items-center justify-between pb-3.5 mb-4 border-b border-neutral-100">
                                 <div class="flex items-center gap-2">
-                                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                                    <span class="font-mono text-xs text-slate-300 uppercase font-bold tracking-wider">OFFICIAL SYSTEM EMBLEM</span>
+                                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                                    <span class="font-mono text-xs text-neutral-600 uppercase font-bold tracking-wider">OFFICIAL SYSTEM EMBLEM</span>
                                 </div>
-                                <span class="font-mono text-[10px] text-slate-950 bg-emerald-400 px-2.5 py-0.5 rounded font-bold uppercase tracking-wider">V2.4 BIO-CORE</span>
+                                <span class="font-mono text-[10px] text-white bg-black px-2.5 py-0.5 rounded font-bold uppercase tracking-wider">V2.4 BIO-CORE</span>
                             </div>
 
                             <!-- Showcase Emblem Frame -->
-                            <div class="relative w-full aspect-[4/3] rounded-2xl bg-slate-950 p-3 shadow-2xl overflow-hidden flex items-center justify-center border border-emerald-500/20">
-                                <!-- Ambient Glow Behind Emblem -->
-                                <div class="absolute inset-0 bg-radial-gradient from-emerald-500/15 via-transparent to-transparent pointer-events-none"></div>
-
+                            <div class="relative w-full aspect-[4/3] rounded-2xl bg-black p-3 shadow-2xl overflow-hidden flex items-center justify-center border border-neutral-800">
                                 <!-- Official Emblem Image -->
                                 <img id="hero-emblem-img" 
                                      src="logo.jpg" 
                                      alt="THE TEN RINGS Official Emblem" 
-                                     class="relative z-10 w-full h-full object-contain rounded-xl transform transition-transform duration-500 group-hover:scale-105 drop-shadow-[0_0_35px_rgba(16,185,129,0.25)]"
+                                     class="relative z-10 w-full h-full object-contain rounded-xl transform transition-transform duration-500 group-hover:scale-105"
                                      loading="eager"
                                      onerror="this.onerror=null; this.src='logo.png';">
                                 
@@ -412,12 +389,12 @@
                             </div>
 
                             <!-- Card Caption & Telemetry -->
-                            <div class="w-full mt-4 flex items-center justify-between text-xs font-mono text-slate-400">
+                            <div class="w-full mt-4 flex items-center justify-between text-xs font-mono text-neutral-500">
                                 <span class="flex items-center gap-1.5">
-                                    <i class="fa-solid fa-circle-nodes text-emerald-400 text-[11px]"></i>
+                                    <i class="fa-solid fa-circle-nodes text-black text-[11px]"></i>
                                     <span>Closed-Loop Bio-Computation</span>
                                 </span>
-                                <span class="text-emerald-400 font-bold group-hover:text-emerald-300 transition-colors flex items-center gap-1">
+                                <span class="text-black font-bold group-hover:underline transition-colors flex items-center gap-1">
                                     <span>Interactive 3D Tilt</span>
                                     <i class="fa-solid fa-arrows-up-down-left-right text-[10px]"></i>
                                 </span>
@@ -431,32 +408,33 @@
         </section>
 
         <!-- ========================================================================= -->
-        <!-- MARQUEE TICKER RIBBON (EDITORIAL THEME MOTIF) -->
+        <!-- MARQUEE TICKER RIBBON (AUTONO HIGH-CONTRAST MONOCHROMATIC) -->
         <!-- ========================================================================= -->
-        <div class="marquee">
+        <div class="marquee-autono">
             <div class="marquee-track">
                 <span>THE TEN RINGS<i>✳</i>COMPUTATIONAL BIOLOGY<i>✳</i>CELLULAR DIGITAL TWINS<i>✳</i>SYNTHETIC GENOMICS<i>✳</i>PROTEIN TRANSFORMERS<i>✳</i>CELL-FREE SENSORS<i>✳</i>PLANETARY RESILIENCE<i>✳</i>DNA NANOMEDICINE<i>✳</i>ROBOTIC BIOFOUNDRY<i>✳</i>THE TEN RINGS<i>✳</i>COMPUTATIONAL BIOLOGY<i>✳</i>CELLULAR DIGITAL TWINS<i>✳</i>SYNTHETIC GENOMICS<i>✳</i>PROTEIN TRANSFORMERS<i>✳</i>CELL-FREE SENSORS<i>✳</i>PLANETARY RESILIENCE<i>✳</i>DNA NANOMEDICINE<i>✳</i>ROBOTIC BIOFOUNDRY<i>✳</i></span>
             </div>
+        </div>
         </div>
 
 
         <!-- ========================================================================= -->
         <!-- THE 10 RINGS: INTERACTIVE SYSTEM ARCHITECTURE & INSPECTOR DOCK -->
         <!-- ========================================================================= -->
-        <section id="matrix" class="py-24 relative bg-[#070A12] border-b border-white/[0.08]">
+        <section id="matrix" class="py-24 relative bg-neutral-50 border-b border-neutral-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
                     <div>
-                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-mono text-emerald-400 uppercase tracking-widest mb-4 font-bold">
-                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                            <span>01 / MATRIX ✳ CLOSED-LOOP ARCHITECTURE</span>
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-neutral-200 text-xs font-mono text-black uppercase tracking-widest mb-4 font-bold shadow-2xs">
+                            <span class="w-1.5 h-1.5 rounded-full bg-black"></span>
+                            <span>01 / ARCHITECTURE ✳ CLOSED-LOOP MATRIX</span>
                         </div>
-                        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
-                            Ten compute rings, <span class="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">one living organism.</span>
+                        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-black tracking-tight leading-tight">
+                            The Ten Rings Architecture Matrix
                         </h2>
                     </div>
-                    <p class="text-slate-300 text-sm sm:text-base font-normal max-w-md leading-relaxed">
+                    <p class="text-neutral-600 text-sm sm:text-base font-normal max-w-md leading-relaxed">
                         A unified, closed-loop compute matrix. Click or hover any ring below to inspect its data flow, biological transformation, and connected pipeline initiatives.
                     </p>
                 </div>
@@ -587,7 +565,7 @@
                 </div>
 
                 <!-- Dynamic Live Inspector Dock (Interactive!) -->
-                <div id="ring-inspector" class="bg-slate-900/80 backdrop-blur-xl rounded-3xl border border-white/10 p-6 sm:p-8 shadow-2xl">
+                <div id="ring-inspector" class="bg-white rounded-3xl border border-neutral-200 p-6 sm:p-8 shadow-sm">
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                         
                         <div class="lg:col-span-8 space-y-4">
@@ -620,7 +598,7 @@
                         </div>
 
                         <!-- Right Metric Highlight -->
-                        <div class="lg:col-span-4 bg-slate-950/70 rounded-2xl p-5 border border-white/10 font-mono text-xs space-y-3">
+                        <div class="lg:col-span-4 bg-neutral-50 rounded-2xl p-5 border border-neutral-200 font-mono text-xs space-y-3">
                             <div class="text-slate-500 uppercase font-bold text-[10px]">Domain Telemetry</div>
                             <div class="flex justify-between items-center py-1 border-b border-line">
                                 <span class="text-[#A7CAB5]">Core Engine:</span>
@@ -654,24 +632,24 @@
         <!-- 5. Hariyali 2.0 -->
         <!-- 6. Gutek -->
         <!-- ========================================================================= -->
-        <section id="pipeline" class="py-24 relative bg-[#090D16] border-b border-white/[0.08]">
+        <section id="pipeline" class="py-24 relative bg-white border-b border-neutral-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
                     <div>
                         <!-- Eyebrow Badge -->
-                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-mono text-emerald-400 uppercase tracking-widest mb-4 font-bold">
-                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                            <span>02 / PRODUCTION PIPELINE ✳ 6 ACTIVE SUBSTRATES</span>
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-100 border border-neutral-200 text-xs font-mono text-black uppercase tracking-widest mb-4 font-bold shadow-2xs">
+                            <span class="w-1.5 h-1.5 rounded-full bg-black"></span>
+                            <span>02 / SERVICES & SYSTEMS ✳ 6 PRODUCTION ENGINES</span>
                         </div>
 
                         <!-- Increased Font Size Headline: Visual & Easy to Read -->
-                        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.08]">
-                            Small rings, <span class="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">big ripples.</span>
+                        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-black tracking-tight leading-[1.06]">
+                            Small rings, big ripples.
                         </h2>
 
                         <!-- Short One Line Description: Visual & Easy to Read (text-lg sm:text-xl) -->
-                        <p class="text-lg sm:text-xl text-slate-300 font-medium leading-relaxed max-w-4xl mt-4">
+                        <p class="text-lg sm:text-xl text-neutral-600 font-medium leading-relaxed max-w-4xl mt-3">
                             Six production-grade computational bio-engines translating genomic code into real-world therapeutics, biopolymers, and planetary resilience.
                         </p>
                     </div>
@@ -679,14 +657,14 @@
                     <!-- Search & Filter Controls -->
                     <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
                         <div class="relative">
-                            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 text-xs"></i>
-                            <input type="text" id="pipeline-search" placeholder="Search systems..." class="w-full sm:w-52 pl-9 pr-3.5 py-2.5 rounded-xl bg-slate-900/90 border border-white/10 text-xs font-mono text-white placeholder:text-slate-500 focus:outline-none focus:border-emerald-500 transition-colors shadow-inner">
+                            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-neutral-400 text-xs"></i>
+                            <input type="text" id="pipeline-search" placeholder="Search systems..." class="w-full sm:w-52 pl-9 pr-3.5 py-2.5 rounded-full bg-neutral-50 border border-neutral-200 text-xs font-mono text-black placeholder:text-neutral-400 focus:outline-none focus:border-black transition-colors">
                         </div>
 
-                        <div class="flex items-center gap-1 p-1 rounded-xl bg-slate-900/80 border border-white/10 text-xs font-mono">
-                            <button class="project-filter-btn px-3.5 py-1.5 rounded-lg bg-emerald-500 text-slate-950 font-bold transition-all shadow-sm" data-filter="all">All (6)</button>
-                            <button class="project-filter-btn px-3.5 py-1.5 rounded-lg text-slate-400 font-semibold hover:text-white transition-all" data-filter="genomics">Bio-Compute</button>
-                            <button class="project-filter-btn px-3.5 py-1.5 rounded-lg text-slate-400 font-semibold hover:text-white transition-all" data-filter="planetary">Planetary</button>
+                        <div class="flex items-center gap-1 p-1 rounded-full bg-neutral-100 border border-neutral-200 text-xs font-mono">
+                            <button class="project-filter-btn px-4 py-1.5 rounded-full bg-black text-white font-bold transition-all shadow-xs" data-filter="all">All (6)</button>
+                            <button class="project-filter-btn px-4 py-1.5 rounded-full text-neutral-600 font-semibold hover:text-black transition-all" data-filter="genomics">Bio-Compute</button>
+                            <button class="project-filter-btn px-4 py-1.5 rounded-full text-neutral-600 font-semibold hover:text-black transition-all" data-filter="planetary">Planetary</button>
                         </div>
                     </div>
                 </div>
@@ -695,7 +673,7 @@
                 <div id="pipeline-cards-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
                     
                     <!-- 1. PROJECT HELIX-CORE -->
-                    <div id="card-helix-core" class="startup-card glass-card p-7 flex flex-col justify-between h-full rounded-3xl group" data-category="genomics" data-search="project helix-core foundational bio-compute r-01 r-02 protein transformer metagenomes fastq">
+                    <div id="card-helix-core" class="startup-card monochrome-card p-7 flex flex-col justify-between h-full rounded-3xl group" data-category="genomics" data-search="project helix-core foundational bio-compute r-01 r-02 protein transformer metagenomes fastq">
                         <div>
                             <!-- Uniform Badge Row (h-8) -->
                             <div class="flex items-center justify-between mb-3.5 h-8">
@@ -708,18 +686,18 @@
 
                             <!-- Standardized Title Height (h-16) -->
                             <div class="h-16 flex items-center mb-2.5">
-                                <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors leading-snug line-clamp-2">PROJECT HELIX-CORE</h3>
+                                <h3 class="text-xl sm:text-2xl font-black text-black group-hover:text-neutral-700 transition-colors leading-snug line-clamp-2">PROJECT HELIX-CORE</h3>
                             </div>
 
                             <!-- Standardized Description Height (h-16) -->
                             <div class="h-16 mb-4">
-                                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-3">
+                                <p class="text-xs sm:text-sm text-neutral-600 leading-relaxed line-clamp-3">
                                     Foundational biological compute substrate integrating protein language transformers, de-novo plasmid compilation, and kinetic cellular simulation into a unified API.
                                 </p>
                             </div>
 
                             <!-- Uniform Metric Box (h-20) -->
-                            <div class="p-4 rounded-2xl bg-slate-950/70 border border-white/5 font-mono text-xs space-y-2 mb-5 h-20 flex flex-col justify-center text-slate-300">
+                            <div class="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 font-mono text-xs space-y-2 mb-5 h-20 flex flex-col justify-center text-neutral-800">
                                 <div class="flex justify-between items-center">
                                     <span class="text-slate-500 text-[11px]">Training Metagenomes:</span>
                                     <strong class="text-forest font-bold">4.2B+ Sequences</strong>
@@ -732,14 +710,14 @@
                         </div>
 
                         <!-- Bottom-Aligned Button -->
-                        <button class="open-modal-btn w-full py-3 rounded-xl bg-emerald-500/10 hover:bg-emerald-500 text-emerald-400 hover:text-slate-950 border border-emerald-500/30 font-semibold text-xs tracking-wider uppercase transition-all shadow-sm flex items-center justify-center gap-2 mt-auto" data-project="helix-core">
+                        <button class="open-modal-btn w-full py-3 rounded-full bg-black hover:bg-neutral-800 text-white font-bold text-xs tracking-wider uppercase transition-all shadow-xs flex items-center justify-center gap-2 mt-auto" data-project="helix-core">
                             <span>Deep Dive Technical Spec</span>
                             <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </button>
                     </div>
 
                     <!-- 2. PROJECT AEGIS -->
-                    <div id="card-aegis" class="startup-card glass-card p-7 flex flex-col justify-between h-full rounded-3xl group" data-category="planetary" data-search="project aegis distributed biosurveillance r-02 r-09 viral mutation zoonotic sensor">
+                    <div id="card-aegis" class="startup-card monochrome-card p-7 flex flex-col justify-between h-full rounded-3xl group" data-category="planetary" data-search="project aegis distributed biosurveillance r-02 r-09 viral mutation zoonotic sensor">
                         <div>
                             <div class="flex items-center justify-between mb-3.5 h-8">
                                 <span class="px-2.5 py-1 rounded-full bg-purple-50 border border-purple-200 text-purple-700 font-mono text-[11px] font-bold">
@@ -749,7 +727,7 @@
                             </div>
 
                             <div class="h-16 flex items-center mb-2.5">
-                                <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors leading-snug line-clamp-2">PROJECT AEGIS</h3>
+                                <h3 class="text-xl sm:text-2xl font-black text-black group-hover:text-neutral-700 transition-colors leading-snug line-clamp-2">PROJECT AEGIS</h3>
                             </div>
 
                             <div class="h-16 mb-4">
@@ -770,14 +748,14 @@
                             </div>
                         </div>
 
-                        <button class="open-modal-btn w-full py-3 rounded-xl bg-emerald-500/10 hover:bg-emerald-500 text-emerald-400 hover:text-slate-950 border border-emerald-500/30 font-semibold text-xs tracking-wider uppercase transition-all shadow-sm flex items-center justify-center gap-2 mt-auto" data-project="aegis">
+                        <button class="open-modal-btn w-full py-3 rounded-full bg-black hover:bg-neutral-800 text-white font-bold text-xs tracking-wider uppercase transition-all shadow-xs flex items-center justify-center gap-2 mt-auto" data-project="aegis">
                             <span>Deep Dive Technical Spec</span>
                             <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </button>
                     </div>
 
                     <!-- 3. NGS READ QUALITY CONTROL PIPELINE -->
-                    <div id="card-ngs-qc" class="startup-card glass-card p-7 flex flex-col justify-between h-full rounded-3xl group" data-category="genomics" data-search="ngs read quality control pipeline r-01 r-05 sequencing illumina pacbio nanopore q40">
+                    <div id="card-ngs-qc" class="startup-card monochrome-card p-7 flex flex-col justify-between h-full rounded-3xl group" data-category="genomics" data-search="ngs read quality control pipeline r-01 r-05 sequencing illumina pacbio nanopore q40">
                         <div>
                             <div class="flex items-center justify-between mb-3.5 h-8">
                                 <span class="px-2.5 py-1 rounded-full bg-sky-50 border border-sky-200 text-sky-700 font-mono text-[11px] font-bold">
@@ -787,7 +765,7 @@
                             </div>
 
                             <div class="h-16 flex items-center mb-2.5">
-                                <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors leading-snug line-clamp-2">NGS Read Quality Control Pipeline</h3>
+                                <h3 class="text-xl sm:text-2xl font-black text-black group-hover:text-neutral-700 transition-colors leading-snug line-clamp-2">NGS Read Quality Control Pipeline</h3>
                             </div>
 
                             <div class="h-16 mb-4">
@@ -808,14 +786,14 @@
                             </div>
                         </div>
 
-                        <button class="open-modal-btn w-full py-3 rounded-xl bg-emerald-500/10 hover:bg-emerald-500 text-emerald-400 hover:text-slate-950 border border-emerald-500/30 font-semibold text-xs tracking-wider uppercase transition-all shadow-sm flex items-center justify-center gap-2 mt-auto" data-project="ngs-qc">
+                        <button class="open-modal-btn w-full py-3 rounded-full bg-black hover:bg-neutral-800 text-white font-bold text-xs tracking-wider uppercase transition-all shadow-xs flex items-center justify-center gap-2 mt-auto" data-project="ngs-qc">
                             <span>Deep Dive Technical Spec</span>
                             <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </button>
                     </div>
 
                     <!-- 4. COMPARATIVE GENOMIC ANALYSIS OF ESCHERICHIA COLI -->
-                    <div id="card-ecoli-analysis" class="startup-card glass-card p-7 flex flex-col justify-between h-full rounded-3xl group" data-category="genomics" data-search="comparative genomic analysis of escherichia coli r-01 r-03 e. coli amr pangenome hgt snp">
+                    <div id="card-ecoli-analysis" class="startup-card monochrome-card p-7 flex flex-col justify-between h-full rounded-3xl group" data-category="genomics" data-search="comparative genomic analysis of escherichia coli r-01 r-03 e. coli amr pangenome hgt snp">
                         <div>
                             <div class="flex items-center justify-between mb-3.5 h-8">
                                 <span class="px-2.5 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 font-mono text-[11px] font-bold">
@@ -825,7 +803,7 @@
                             </div>
 
                             <div class="h-16 flex items-center mb-2.5">
-                                <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors leading-snug line-clamp-2">Comparative genomic analysis of Escherichia coli</h3>
+                                <h3 class="text-xl sm:text-2xl font-black text-black group-hover:text-neutral-700 transition-colors leading-snug line-clamp-2">Comparative genomic analysis of Escherichia coli</h3>
                             </div>
 
                             <div class="h-16 mb-4">
@@ -846,14 +824,14 @@
                             </div>
                         </div>
 
-                        <button class="open-modal-btn w-full py-3 rounded-xl bg-emerald-500/10 hover:bg-emerald-500 text-emerald-400 hover:text-slate-950 border border-emerald-500/30 font-semibold text-xs tracking-wider uppercase transition-all shadow-sm flex items-center justify-center gap-2 mt-auto" data-project="ecoli-analysis">
+                        <button class="open-modal-btn w-full py-3 rounded-full bg-black hover:bg-neutral-800 text-white font-bold text-xs tracking-wider uppercase transition-all shadow-xs flex items-center justify-center gap-2 mt-auto" data-project="ecoli-analysis">
                             <span>Deep Dive Technical Spec</span>
                             <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </button>
                     </div>
 
                     <!-- 5. HARIYALI 2.0 -->
-                    <div id="card-hariyali" class="startup-card glass-card p-7 flex flex-col justify-between h-full rounded-3xl group" data-category="planetary" data-search="hariyali 2.0 soil desertification microbiome r-01 r-04 water retention nitrogen crop">
+                    <div id="card-hariyali" class="startup-card monochrome-card p-7 flex flex-col justify-between h-full rounded-3xl group" data-category="planetary" data-search="hariyali 2.0 soil desertification microbiome r-01 r-04 water retention nitrogen crop">
                         <div>
                             <div class="flex items-center justify-between mb-3.5 h-8">
                                 <span class="px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-mono text-[11px] font-bold">
@@ -863,7 +841,7 @@
                             </div>
 
                             <div class="h-16 flex items-center mb-2.5">
-                                <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors leading-snug line-clamp-2">Hariyali 2.0</h3>
+                                <h3 class="text-xl sm:text-2xl font-black text-black group-hover:text-neutral-700 transition-colors leading-snug line-clamp-2">Hariyali 2.0</h3>
                             </div>
 
                             <div class="h-16 mb-4">
@@ -884,14 +862,14 @@
                             </div>
                         </div>
 
-                        <button class="open-modal-btn w-full py-3 rounded-xl bg-emerald-500/10 hover:bg-emerald-500 text-emerald-400 hover:text-slate-950 border border-emerald-500/30 font-semibold text-xs tracking-wider uppercase transition-all shadow-sm flex items-center justify-center gap-2 mt-auto" data-project="hariyali">
+                        <button class="open-modal-btn w-full py-3 rounded-full bg-black hover:bg-neutral-800 text-white font-bold text-xs tracking-wider uppercase transition-all shadow-xs flex items-center justify-center gap-2 mt-auto" data-project="hariyali">
                             <span>Deep Dive Technical Spec</span>
                             <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </button>
                     </div>
 
                     <!-- 6. GUTEK -->
-                    <div id="card-gutek" class="startup-card glass-card p-7 flex flex-col justify-between h-full rounded-3xl group" data-category="planetary" data-search="gutek biodegradable biopolymer plastic r-01 r-06 tensile cellulose carbon negative">
+                    <div id="card-gutek" class="startup-card monochrome-card p-7 flex flex-col justify-between h-full rounded-3xl group" data-category="planetary" data-search="gutek biodegradable biopolymer plastic r-01 r-06 tensile cellulose carbon negative">
                         <div>
                             <div class="flex items-center justify-between mb-3.5 h-8">
                                 <span class="px-2.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-mono text-[11px] font-bold">
@@ -901,7 +879,7 @@
                             </div>
 
                             <div class="h-16 flex items-center mb-2.5">
-                                <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors leading-snug line-clamp-2">Gutek</h3>
+                                <h3 class="text-xl sm:text-2xl font-black text-black group-hover:text-neutral-700 transition-colors leading-snug line-clamp-2">Gutek</h3>
                             </div>
 
                             <div class="h-16 mb-4">
@@ -922,7 +900,7 @@
                             </div>
                         </div>
 
-                        <button class="open-modal-btn w-full py-3 rounded-xl bg-emerald-500/10 hover:bg-emerald-500 text-emerald-400 hover:text-slate-950 border border-emerald-500/30 font-semibold text-xs tracking-wider uppercase transition-all shadow-sm flex items-center justify-center gap-2 mt-auto" data-project="gutek">
+                        <button class="open-modal-btn w-full py-3 rounded-full bg-black hover:bg-neutral-800 text-white font-bold text-xs tracking-wider uppercase transition-all shadow-xs flex items-center justify-center gap-2 mt-auto" data-project="gutek">
                             <span>Deep Dive Technical Spec</span>
                             <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </button>
@@ -941,7 +919,7 @@
         <!-- 3. PROJECT ONCOTRACE -->
         <!-- 4. PROJECT NANOGENIX -->
         <!-- ========================================================================= -->
-        <section id="upcoming" class="py-24 relative bg-[#070A12] border-b border-white/[0.08]">
+        <section id="upcoming" class="py-24 relative bg-black text-white border-b border-neutral-800">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
@@ -950,8 +928,8 @@
                             <span class="w-1.5 h-1.5 rounded-full bg-lime animate-pulse"></span>
                             03 / HORIZON DIRECTIVES <span class="text-lime mx-1">✳</span> 2027–2028
                         </div>
-                        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
-                            Next on the bench. <span class="bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 bg-clip-text text-transparent">Still becoming.</span>
+                        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+                            Next on the bench. <span class="text-neutral-500">Still becoming.</span>
                         </h2>
                     </div>
                     <p class="text-[#A7CAB5] text-sm sm:text-base font-sans max-w-md leading-relaxed">
@@ -963,7 +941,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
                     
                     <!-- 1. PROJECT METAEARTH -->
-                    <div id="card-metaearth" class="startup-card glass-card p-7 flex flex-col justify-between h-full rounded-3xl group">
+                    <div id="card-metaearth" class="startup-card monochrome-card p-7 flex flex-col justify-between h-full rounded-3xl group">
                         <div>
                             <div class="flex items-center justify-between mb-3.5 h-8">
                                 <span class="px-2.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 font-mono text-[11px] font-bold">
@@ -974,7 +952,7 @@
 
                             <div class="font-mono text-[10px] text-forest font-bold uppercase mb-1">Horizon 2027</div>
                             <div class="h-14 flex items-center mb-2">
-                                <h3 class="text-lg sm:text-xl font-bold text-white group-hover:text-cyan-400 transition-colors line-clamp-2">PROJECT METAEARTH</h3>
+                                <h3 class="text-lg sm:text-xl font-black text-white group-hover:text-neutral-300 transition-colors line-clamp-2">PROJECT METAEARTH</h3>
                             </div>
                             
                             <div class="h-16 mb-4">
@@ -995,14 +973,14 @@
                             </div>
                         </div>
 
-                        <button class="open-modal-btn w-full py-2.5 rounded-xl bg-moss/50 hover:bg-lime hover:text-forest border border-moss text-bone font-semibold text-xs tracking-wider uppercase transition-all flex items-center justify-center gap-2 shadow-2xs mt-auto" data-project="metaearth">
+                        <button class="open-modal-btn w-full py-3 rounded-full bg-neutral-900 hover:bg-white hover:text-black border border-neutral-700 text-white font-bold text-xs tracking-wider uppercase transition-all flex items-center justify-center gap-2 mt-auto" data-project="metaearth">
                             <span>View Research Directive</span>
                             <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </button>
                     </div>
 
                     <!-- 2. PROJECT BIOFORGE -->
-                    <div id="card-bioforge" class="startup-card glass-card p-7 flex flex-col justify-between h-full rounded-3xl group">
+                    <div id="card-bioforge" class="startup-card monochrome-card p-7 flex flex-col justify-between h-full rounded-3xl group">
                         <div>
                             <div class="flex items-center justify-between mb-3.5 h-8">
                                 <span class="px-2.5 py-1 rounded-full bg-teal-50 border border-teal-200 text-teal-700 font-mono text-[11px] font-bold">
@@ -1013,7 +991,7 @@
 
                             <div class="font-mono text-[10px] text-forest font-bold uppercase mb-1">Horizon 2027</div>
                             <div class="h-14 flex items-center mb-2">
-                                <h3 class="text-lg sm:text-xl font-bold text-white group-hover:text-cyan-400 transition-colors line-clamp-2">PROJECT BIOFORGE</h3>
+                                <h3 class="text-lg sm:text-xl font-black text-white group-hover:text-neutral-300 transition-colors line-clamp-2">PROJECT BIOFORGE</h3>
                             </div>
                             
                             <div class="h-16 mb-4">
@@ -1034,14 +1012,14 @@
                             </div>
                         </div>
 
-                        <button class="open-modal-btn w-full py-2.5 rounded-xl bg-moss/50 hover:bg-lime hover:text-forest border border-moss text-bone font-semibold text-xs tracking-wider uppercase transition-all flex items-center justify-center gap-2 shadow-2xs mt-auto" data-project="bioforge">
+                        <button class="open-modal-btn w-full py-3 rounded-full bg-neutral-900 hover:bg-white hover:text-black border border-neutral-700 text-white font-bold text-xs tracking-wider uppercase transition-all flex items-center justify-center gap-2 mt-auto" data-project="bioforge">
                             <span>View Research Directive</span>
                             <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </button>
                     </div>
 
                     <!-- 3. PROJECT ONCOTRACE -->
-                    <div id="card-oncotrace" class="startup-card glass-card p-7 flex flex-col justify-between h-full rounded-3xl group">
+                    <div id="card-oncotrace" class="startup-card monochrome-card p-7 flex flex-col justify-between h-full rounded-3xl group">
                         <div>
                             <div class="flex items-center justify-between mb-3.5 h-8">
                                 <span class="px-2.5 py-1 rounded-full bg-rose-50 border border-rose-200 text-rose-700 font-mono text-[11px] font-bold">
@@ -1052,7 +1030,7 @@
 
                             <div class="font-mono text-[10px] text-forest font-bold uppercase mb-1">Horizon 2027–2028</div>
                             <div class="h-14 flex items-center mb-2">
-                                <h3 class="text-lg sm:text-xl font-bold text-white group-hover:text-cyan-400 transition-colors line-clamp-2">PROJECT ONCOTRACE</h3>
+                                <h3 class="text-lg sm:text-xl font-black text-white group-hover:text-neutral-300 transition-colors line-clamp-2">PROJECT ONCOTRACE</h3>
                             </div>
                             
                             <div class="h-16 mb-4">
@@ -1073,14 +1051,14 @@
                             </div>
                         </div>
 
-                        <button class="open-modal-btn w-full py-2.5 rounded-xl bg-moss/50 hover:bg-lime hover:text-forest border border-moss text-bone font-semibold text-xs tracking-wider uppercase transition-all flex items-center justify-center gap-2 shadow-2xs mt-auto" data-project="oncotrace">
+                        <button class="open-modal-btn w-full py-3 rounded-full bg-neutral-900 hover:bg-white hover:text-black border border-neutral-700 text-white font-bold text-xs tracking-wider uppercase transition-all flex items-center justify-center gap-2 mt-auto" data-project="oncotrace">
                             <span>View Research Directive</span>
                             <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </button>
                     </div>
 
                     <!-- 4. PROJECT NANOGENIX -->
-                    <div id="card-nanogenix" class="startup-card glass-card p-7 flex flex-col justify-between h-full rounded-3xl group">
+                    <div id="card-nanogenix" class="startup-card monochrome-card p-7 flex flex-col justify-between h-full rounded-3xl group">
                         <div>
                             <div class="flex items-center justify-between mb-3.5 h-8">
                                 <span class="px-2.5 py-1 rounded-full bg-purple-50 border border-purple-200 text-purple-700 font-mono text-[11px] font-bold">
@@ -1091,7 +1069,7 @@
 
                             <div class="font-mono text-[10px] text-forest font-bold uppercase mb-1">Horizon 2028</div>
                             <div class="h-14 flex items-center mb-2">
-                                <h3 class="text-lg sm:text-xl font-bold text-white group-hover:text-cyan-400 transition-colors line-clamp-2">PROJECT NANOGENIX</h3>
+                                <h3 class="text-lg sm:text-xl font-black text-white group-hover:text-neutral-300 transition-colors line-clamp-2">PROJECT NANOGENIX</h3>
                             </div>
                             
                             <div class="h-16 mb-4">
@@ -1112,7 +1090,7 @@
                             </div>
                         </div>
 
-                        <button class="open-modal-btn w-full py-2.5 rounded-xl bg-moss/50 hover:bg-lime hover:text-forest border border-moss text-bone font-semibold text-xs tracking-wider uppercase transition-all flex items-center justify-center gap-2 shadow-2xs mt-auto" data-project="nanogenix">
+                        <button class="open-modal-btn w-full py-3 rounded-full bg-neutral-900 hover:bg-white hover:text-black border border-neutral-700 text-white font-bold text-xs tracking-wider uppercase transition-all flex items-center justify-center gap-2 mt-auto" data-project="nanogenix">
                             <span>View Research Directive</span>
                             <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </button>
@@ -1127,7 +1105,7 @@
         <!-- ========================================================================= -->
         <!-- INTERACTIVE BIO-COMPUTE CYCLE (FROM CODE TO LIVING SYSTEM) -->
         <!-- ========================================================================= -->
-        <section id="workflow" class="py-24 relative bg-[#090D16] border-b border-white/[0.08]">
+        <section id="workflow" class="py-24 relative bg-neutral-50 border-b border-neutral-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
@@ -1136,8 +1114,8 @@
                             <span class="w-1.5 h-1.5 rounded-full bg-lime"></span>
                             04 / BIO-COMPUTE CYCLE <span class="text-lime mx-1">✳</span> CLOSED LOOP
                         </div>
-                        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
-                            From in-silico code <span class="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">to living organism.</span>
+                        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-black tracking-tight leading-tight">
+                            The Bio-Digital Development Cycle
                         </h2>
                     </div>
                     <p class="text-[#A7CAB5] text-sm font-sans max-w-md">
@@ -1146,7 +1124,7 @@
                 </div>
 
                 <!-- Interactive Workflow Container -->
-                <div class="bg-slate-900/80 backdrop-blur-xl rounded-3xl border border-white/10 p-6 sm:p-10 shadow-2xl">
+                <div class="bg-white rounded-3xl border border-neutral-200 p-6 sm:p-10 shadow-sm">
                     
                     <!-- Phase Tab Buttons -->
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10 pb-6 border-b border-line">
@@ -1244,7 +1222,7 @@
         <!-- ========================================================================= -->
         <!-- LEADERSHIP & DIRECT COLLABORATION (FOUNDER PROFILE & DISPATCH) -->
         <!-- ========================================================================= -->
-        <section id="founder" class="py-24 relative bg-[#070A12] border-b border-white/[0.08]">
+        <section id="founder" class="py-24 relative bg-white border-b border-neutral-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="max-w-3xl mb-12">
@@ -1252,8 +1230,8 @@
                         <span class="w-1.5 h-1.5 rounded-full bg-lime"></span>
                         05 / LEADERSHIP <span class="text-lime mx-1">✳</span> THE ARCHITECT
                     </div>
-                    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
-                            The people behind <span class="bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent">the code and the cell.</span>
+                    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-black tracking-tight leading-tight">
+                            Leadership & Institutional Partnerships
                         </h2>
                     <p class="text-[#A7CAB5] text-sm font-sans mt-2">
                         THE TEN RINGS operates at the intersection of open-source science and venture-scale deep technology. We welcome research fellowships, institutional grants, and industrial scale partnerships.
@@ -1263,15 +1241,16 @@
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
                     
                     <!-- Left: Founder Profile Card -->
-                    <div class="lg:col-span-5 bg-slate-900/80 backdrop-blur-xl p-8 rounded-3xl border border-white/10 shadow-2xl flex flex-col justify-between">
+                    <div class="lg:col-span-5 bg-neutral-50 p-8 rounded-3xl border border-neutral-200 shadow-sm flex flex-col justify-between">
                         <div>
                             <div class="flex items-center gap-4 mb-6">
-                                <div class="relative w-18 h-18 rounded-2xl bg-gradient-to-br from-moss/20 to-lime/20 flex items-center justify-center border border-moss/40 overflow-hidden shadow-sm">
-                                    <div class="avatar-orbit"></div>
+                                <div class="w-18 h-18 rounded-2xl bg-black text-white flex items-center justify-center font-black text-2xl shadow-sm border border-black">
+                                    PK
+                                </div>
                                     <span class="font-serif font-bold text-2xl text-forest z-10">PK</span>
                                 </div>
                                 <div>
-                                    <h3 class="font-bold text-3xl text-white">Punit Kant</h3>
+                                    <h3 class="font-black text-3xl text-black">Punit Kant</h3>
                                     <div class="text-xs font-mono text-moss font-bold uppercase tracking-wider">Founder & Chief Bio-Computational Architect</div>
                                     <div class="text-xs text-slate-500 mt-0.5">The Ten Rings Platform</div>
                                 </div>
@@ -1321,13 +1300,13 @@
                     </div>
 
                     <!-- Right: Direct Institutional Inquiry Form -->
-                    <div id="contact" class="lg:col-span-7 bg-gradient-to-br from-slate-900 to-slate-950 text-white p-8 sm:p-10 rounded-3xl border border-white/10 shadow-2xl flex flex-col justify-between">
+                    <div id="contact" class="lg:col-span-7 bg-black text-white p-8 sm:p-10 rounded-3xl border border-neutral-800 shadow-2xl flex flex-col justify-between">
                         <div>
                             <div class="text-xs font-mono text-[#A7CAB5] uppercase tracking-widest mb-2 font-bold flex items-center gap-2">
                                     <span class="w-1.5 h-1.5 rounded-full bg-lime"></span>
                                     06 / INITIATE DIALOGUE
                                 </div>
-                                <h3 class="font-extrabold text-3xl sm:text-4xl text-white mb-2">Have a question <span class="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">worth chasing?</span></h3>
+                                <h3 class="font-black text-3xl sm:text-4xl text-white mb-2">Have a question worth chasing?</h3>
                             <p class="text-xs text-[#B4D0BE] font-sans mb-6 leading-relaxed">
                                 Transmit research proposals, fellowship inquiries, or commercial partnership pilots directly to our system architecture desk.
                             </p>
@@ -1336,11 +1315,11 @@
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
                                         <label class="block text-xs font-mono font-bold text-[#D5EADD] mb-1">Full Name</label>
-                                        <input type="text" required placeholder="Dr. Jane Doe" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950/80 border border-white/10 focus:border-emerald-500 focus:outline-none text-white text-xs placeholder:text-slate-500 transition-colors">
+                                        <input type="text" required placeholder="Dr. Jane Doe" class="w-full px-4 py-3 rounded-xl bg-neutral-900 border border-neutral-700 focus:border-white focus:outline-none text-white text-xs placeholder:text-neutral-500 transition-colors">
                                     </div>
                                     <div>
                                         <label class="block text-xs font-mono font-bold text-[#D5EADD] mb-1">Institutional Email</label>
-                                        <input type="email" required placeholder="jane@institute.org" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950/80 border border-white/10 focus:border-emerald-500 focus:outline-none text-white text-xs placeholder:text-slate-500 transition-colors">
+                                        <input type="email" required placeholder="jane@institute.org" class="w-full px-4 py-3 rounded-xl bg-neutral-900 border border-neutral-700 focus:border-white focus:outline-none text-white text-xs placeholder:text-neutral-500 transition-colors">
                                     </div>
                                 </div>
 
@@ -1363,10 +1342,10 @@
 
                                 <div>
                                     <label class="block text-xs font-mono font-bold text-[#D5EADD] mb-1">Proposal & Scope</label>
-                                    <textarea rows="4" required placeholder="Outline your research hypothesis, dataset, or collaboration scope..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950/80 border border-white/10 focus:border-emerald-500 focus:outline-none text-white text-xs placeholder:text-slate-500 transition-colors"></textarea>
+                                    <textarea rows="4" required placeholder="Outline your research hypothesis, dataset, or collaboration scope..." class="w-full px-4 py-3 rounded-xl bg-neutral-900 border border-neutral-700 focus:border-white focus:outline-none text-white text-xs placeholder:text-neutral-500 transition-colors"></textarea>
                                 </div>
 
-                                <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-bold text-xs font-mono tracking-widest uppercase transition-all shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2">
+                                <button type="submit" class="w-full py-4 rounded-full bg-white hover:bg-neutral-200 text-black font-black text-xs font-mono tracking-widest uppercase transition-all shadow-md flex items-center justify-center gap-2">
                                     <i class="fa-solid fa-paper-plane text-xs"></i>
                                     <span>TRANSMIT INQUIRY</span>
                                 </button>
@@ -1384,7 +1363,7 @@
     <!-- ========================================================================= -->
     <!-- ENTERPRISE FOOTER -->
     <!-- ========================================================================= -->
-    <footer class="border-t border-white/[0.08] bg-[#05080E] text-slate-400 py-16 font-sans">
+    <footer class="border-t border-neutral-800 bg-black text-neutral-400 py-16 font-sans">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
                 
@@ -1450,7 +1429,7 @@
     <!-- ========================================================================= -->
     <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 overflow-y-auto">
         <!-- Backdrop -->
-        <div id="modal-backdrop" class="fixed inset-0 bg-black/85 backdrop-blur-md transition-opacity opacity-0"></div>
+        <div id="modal-backdrop" class="fixed inset-0 bg-black/80 backdrop-blur-md transition-opacity opacity-0"></div>
         
         <!-- Modal Content Container -->
         <div id="modal-container" class="relative z-10 w-full max-w-4xl bg-white border border-line rounded-3xl shadow-2xl overflow-hidden transition-all duration-300 transform scale-95 opacity-0 my-8">
