@@ -204,12 +204,12 @@
     </div>
 
     <!-- Navigation Header -->
-        <header class="fixed top-0 left-0 right-0 z-40 glass-nav transition-all duration-300">
+            <header class="fixed top-0 left-0 right-0 z-40 glass-nav transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 
                 <!-- Logo & Brand Identity (Clean alignment) -->
-                <a href="#" class="flex items-center gap-3.5 group">
+                <a href="#" class="flex items-center gap-3.5 group shrink-0">
                     <div class="relative w-11 h-11 rounded-xl bg-slate-900 border border-slate-700/60 flex items-center justify-center overflow-hidden shadow-xs group-hover:border-brand-coral/60 transition-all shrink-0">
                         <img src="logo.jpg" 
                              alt="The Ten Rings Logo" 
@@ -219,35 +219,32 @@
                     </div>
                     <div class="flex flex-col">
                         <div class="flex items-center gap-2">
-                            <span class="font-sans font-extrabold text-base sm:text-lg tracking-tight text-slate-900 group-hover:text-brand-coral transition-colors">THE TEN RINGS</span>
+                            <span class="font-sans font-extrabold text-base sm:text-lg tracking-tight text-slate-900 group-hover:text-brand-coral transition-colors whitespace-nowrap">THE TEN RINGS</span>
                             <span class="w-2 h-2 rounded-full bg-emerald-500 animate-subtle-pulse" title="Systems 10/10 Operational"></span>
                         </div>
-                        <span class="text-[11px] font-mono text-slate-500 font-medium hidden sm:block">Deep Computing &middot; Synthetic Biology</span>
+                        <span class="text-[11px] font-mono text-slate-500 font-medium hidden sm:block whitespace-nowrap">Deep Computing &middot; Synthetic Biology</span>
                     </div>
                 </a>
 
-                <!-- Desktop Navigation Links (Large, clear, simple font) -->
-                <nav class="hidden lg:flex items-center gap-8 font-sans text-sm font-semibold text-slate-600">
-                    <a href="#matrix" class="hover:text-slate-900 hover:text-brand-coral transition-colors py-1">The 10 Rings</a>
-                    <a href="#pipeline" class="hover:text-slate-900 hover:text-brand-coral transition-colors py-1">Active Pipeline (6)</a>
-                    <a href="#upcoming" class="hover:text-slate-900 hover:text-brand-coral transition-colors py-1">
-                        <span>Horizon Directive</span>
-                    </a>
-                    <a href="#workflow" class="hover:text-slate-900 hover:text-brand-coral transition-colors py-1">Bio-Compute Cycle</a>
-                    <a href="#founder" class="hover:text-slate-900 hover:text-brand-coral transition-colors py-1">Leadership</a>
+                <!-- Desktop Navigation Links (Bulletproof: never wrap onto 2 lines) -->
+                <nav class="hidden xl:flex items-center gap-6 2xl:gap-8 font-sans text-sm font-semibold text-slate-600 whitespace-nowrap">
+                    <a href="#matrix" class="whitespace-nowrap shrink-0 hover:text-slate-900 hover:text-brand-coral transition-colors py-1">The 10 Rings</a>
+                    <a href="#pipeline" class="whitespace-nowrap shrink-0 hover:text-slate-900 hover:text-brand-coral transition-colors py-1">Active Pipeline (6)</a>
+                    <a href="#upcoming" class="whitespace-nowrap shrink-0 hover:text-slate-900 hover:text-brand-coral transition-colors py-1">Horizon Directive</a>
+                    <a href="#workflow" class="whitespace-nowrap shrink-0 hover:text-slate-900 hover:text-brand-coral transition-colors py-1">Bio-Compute Cycle</a>
+                    <a href="#founder" class="whitespace-nowrap shrink-0 hover:text-slate-900 hover:text-brand-coral transition-colors py-1">Leadership</a>
                 </nav>
 
                 <!-- Action CTA & Controls -->
-                <div class="flex items-center gap-3">
-
+                <div class="flex items-center gap-3 shrink-0">
                     <!-- Partner With Us CTA -->
-                    <a href="#contact" class="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-brand-coral text-white text-xs sm:text-sm font-bold tracking-wide transition-all shadow-xs">
+                    <a href="#contact" class="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-brand-coral text-white text-xs sm:text-sm font-bold tracking-wide transition-all shadow-xs whitespace-nowrap shrink-0">
                         <span>Partner With Us</span>
                         <i class="fa-solid fa-arrow-right text-xs"></i>
                     </a>
 
                     <!-- Mobile Menu Button (Accessible, large touch target) -->
-                    <button id="mobile-menu-btn" class="lg:hidden w-11 h-11 rounded-xl flex items-center justify-center text-slate-700 hover:text-slate-900 hover:bg-slate-100 transition-colors focus:outline-none" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <button id="mobile-menu-btn" class="xl:hidden w-11 h-11 rounded-xl flex items-center justify-center text-slate-700 hover:text-slate-900 hover:bg-slate-100 transition-colors focus:outline-none" aria-label="Toggle navigation menu" aria-expanded="false">
                         <i class="fa-solid fa-bars text-lg transition-transform"></i>
                     </button>
                 </div>
@@ -258,7 +255,7 @@
         <div id="mobile-menu-backdrop" class="hidden fixed inset-0 top-[80px] bg-slate-950/50 backdrop-blur-xs z-30 transition-opacity"></div>
 
         <!-- Mobile Drawer -->
-        <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white/98 backdrop-blur-xl px-5 sm:px-6 py-5 transition-all shadow-2xl z-40 relative">
+        <div id="mobile-menu" class="hidden xl:hidden border-t border-slate-200 bg-white/98 backdrop-blur-xl px-5 sm:px-6 py-5 transition-all shadow-2xl z-40 relative">
             <div class="flex flex-col gap-2 font-sans text-base font-semibold">
                 <a href="#matrix" class="mobile-link text-slate-700 hover:text-brand-coral py-3 border-b border-slate-100 flex items-center justify-between">
                     <span>The 10 Rings Architecture</span>
@@ -270,14 +267,14 @@
                 </a>
                 <a href="#upcoming" class="mobile-link text-slate-700 hover:text-brand-coral py-3 border-b border-slate-100 flex items-center justify-between">
                     <span>Upcoming Horizon Directive</span>
-                    <span class="text-xs font-mono text-brand-coral bg-brand-coralLight px-2 py-0.5 rounded-full font-bold">Horizon</span>
+                    <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
                 </a>
                 <a href="#workflow" class="mobile-link text-slate-700 hover:text-brand-coral py-3 border-b border-slate-100 flex items-center justify-between">
                     <span>Bio-Compute Cycle</span>
                     <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
                 </a>
                 <a href="#founder" class="mobile-link text-slate-700 hover:text-brand-coral py-3 border-b border-slate-100 flex items-center justify-between">
-                    <span>Leadership & Architect</span>
+                    <span>Leadership &amp; Architect</span>
                     <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
                 </a>
                 <a href="#contact" class="mobile-link text-brand-coral py-3 font-bold flex items-center justify-between">
@@ -297,7 +294,7 @@
             <!-- Subtle Grid Background -->
             <div class="absolute inset-0 bg-grid-light opacity-50 pointer-events-none"></div>
 
-            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20 w-full">
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 pb-16 lg:pb-24 w-full">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                     
                     <!-- Left Column: Value Proposition & Stats -->
