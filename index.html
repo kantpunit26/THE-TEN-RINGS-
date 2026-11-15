@@ -12,7 +12,7 @@
     <!-- Google Fonts: Plus Jakarta Sans, Space Grotesk, JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- FontAwesome 6 for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -24,8 +24,8 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        display: ['"Space Grotesk"', 'sans-serif'],
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+                        display: ['Inter', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
                         mono: ['"JetBrains Mono"', 'monospace'],
                     },
                     colors: {
@@ -53,15 +53,21 @@
     </script>
 
     <style>
-        /* Base typography & light-theme smoothing */
+        :root {
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
         body {
             background-color: #FFFFFF;
             color: #0F172A;
             overflow-x: hidden;
+            font-family: var(--font-sans);
             font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        
         /* Responsive scrollbar hiding */
         .scrollbar-none::-webkit-scrollbar {
             display: none;
@@ -80,7 +86,7 @@
 
         /* Minimal scrollbar */
         ::-webkit-scrollbar {
-            width: 6px;
+            width: 7px;
         }
         ::-webkit-scrollbar-track {
             background: #F8FAFC;
@@ -95,26 +101,26 @@
 
         /* Frosted Glass Navigation */
         .glass-nav {
-            background: rgba(255, 255, 255, 0.94);
+            background: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.95);
         }
 
         /* Subtle Mesh Gradient */
         .hero-mesh-light {
             background: 
-                radial-gradient(circle at 12% 20%, rgba(225, 29, 72, 0.05) 0%, transparent 40%),
-                radial-gradient(circle at 88% 18%, rgba(2, 132, 199, 0.05) 0%, transparent 45%),
-                radial-gradient(circle at 50% 70%, rgba(5, 150, 105, 0.04) 0%, transparent 55%),
-                radial-gradient(circle at 50% 100%, rgba(248, 250, 252, 0.95) 0%, transparent 70%);
+                radial-gradient(circle at 12% 20%, rgba(225, 29, 72, 0.06) 0%, transparent 40%),
+                radial-gradient(circle at 88% 18%, rgba(2, 132, 199, 0.06) 0%, transparent 45%),
+                radial-gradient(circle at 50% 70%, rgba(5, 150, 105, 0.05) 0%, transparent 55%),
+                radial-gradient(circle at 50% 100%, rgba(248, 250, 252, 0.98) 0%, transparent 70%);
         }
 
         /* Background grid lines */
         .bg-grid-light {
             background-image: 
-                linear-gradient(to right, rgba(226, 232, 240, 0.55) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(226, 232, 240, 0.55) 1px, transparent 1px);
+                linear-gradient(to right, rgba(226, 232, 240, 0.6) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(226, 232, 240, 0.6) 1px, transparent 1px);
             background-size: 40px 40px;
         }
 
@@ -129,7 +135,7 @@
         .startup-card:hover {
             border-color: #CBD5E1;
             transform: translateY(-3px);
-            box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.07);
+            box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.08);
         }
 
         /* 3D Tilt Card Container */
@@ -198,72 +204,92 @@
     </div>
 
     <!-- Navigation Header -->
-    <header class="fixed top-0 left-0 right-0 z-40 glass-nav transition-all duration-300">
+        <header class="fixed top-0 left-0 right-0 z-40 glass-nav transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-18 py-3.5">
+            <div class="flex items-center justify-between h-20">
                 
-                <!-- Logo & Brand Identity -->
-                <a href="#" class="flex items-center gap-3 group">
-                    <div class="relative w-10 h-10 rounded-xl bg-slate-900 border border-slate-700/60 flex items-center justify-center overflow-hidden shadow-xs group-hover:border-brand-coral/50 transition-all">
-                        <!-- 1. NAVBAR LOGO (Change "logo.jpg" to your own image file name if needed) -->
+                <!-- Logo & Brand Identity (Clean alignment) -->
+                <a href="#" class="flex items-center gap-3.5 group">
+                    <div class="relative w-11 h-11 rounded-xl bg-slate-900 border border-slate-700/60 flex items-center justify-center overflow-hidden shadow-xs group-hover:border-brand-coral/60 transition-all shrink-0">
                         <img src="logo.jpg" 
                              alt="The Ten Rings Logo" 
                              class="w-full h-full object-cover scale-110 group-hover:scale-120 transition-transform duration-500"
                              style="object-position: 50% 32%;"
                              onerror="this.onerror=null; this.src='logo.png';">
                     </div>
-                    <div class="flex items-center gap-2.5">
-                        <span class="font-display font-bold text-base tracking-wider text-slate-900 uppercase group-hover:text-brand-coral transition-colors">THE TEN RINGS</span>
-                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-subtle-pulse" title="System Operational"></span>
+                    <div class="flex flex-col">
+                        <div class="flex items-center gap-2">
+                            <span class="font-sans font-extrabold text-base sm:text-lg tracking-tight text-slate-900 group-hover:text-brand-coral transition-colors">THE TEN RINGS</span>
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-subtle-pulse" title="Systems 10/10 Operational"></span>
+                        </div>
+                        <span class="text-[11px] font-mono text-slate-500 font-medium hidden sm:block">Deep Computing &middot; Synthetic Biology</span>
                     </div>
                 </a>
 
-                <!-- Desktop Navigation Links -->
-                <nav class="hidden lg:flex items-center gap-7 font-sans text-sm font-semibold text-slate-600">
-                    <a href="#matrix" class="hover:text-slate-900 transition-colors py-1">The 10 Rings</a>
-                    <a href="#pipeline" class="hover:text-slate-900 transition-colors py-1">Active Pipeline (6)</a>
-                    <a href="#upcoming" class="hover:text-slate-900 transition-colors py-1 flex items-center gap-1.5">
-                        <span>Upcoming Horizon</span>
-                        <span class="text-[10px] font-mono text-brand-coral bg-brand-coralLight px-1.5 py-0.2 rounded font-bold">2027–28</span>
+                <!-- Desktop Navigation Links (Large, clear, simple font) -->
+                <nav class="hidden lg:flex items-center gap-8 font-sans text-sm font-semibold text-slate-600">
+                    <a href="#matrix" class="hover:text-slate-900 hover:text-brand-coral transition-colors py-1">The 10 Rings</a>
+                    <a href="#pipeline" class="hover:text-slate-900 hover:text-brand-coral transition-colors py-1">Active Pipeline (6)</a>
+                    <a href="#upcoming" class="hover:text-slate-900 hover:text-brand-coral transition-colors py-1 flex items-center gap-1.5">
+                        <span>Horizon Directive</span>
+                        <span class="text-[10px] font-mono text-brand-coral bg-brand-coralLight px-2 py-0.5 rounded-full font-bold">2027&ndash;28</span>
                     </a>
-                    <a href="#workflow" class="hover:text-slate-900 transition-colors py-1">Bio-Compute Cycle</a>
-                    <a href="#founder" class="hover:text-slate-900 transition-colors py-1">Leadership</a>
+                    <a href="#workflow" class="hover:text-slate-900 hover:text-brand-coral transition-colors py-1">Bio-Compute Cycle</a>
+                    <a href="#founder" class="hover:text-slate-900 hover:text-brand-coral transition-colors py-1">Leadership</a>
                 </nav>
 
-                <!-- Action CTA & Telemetry Badge -->
+                <!-- Action CTA & Controls -->
                 <div class="flex items-center gap-3">
                     <!-- Live Telemetry Pill -->
-                    <div id="telemetry-pill" class="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-xs font-mono text-slate-700 cursor-pointer hover:bg-slate-200 transition-colors" title="Click to view health telemetry">
-                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                        <span class="font-semibold">10/10 Online</span>
+                    <div id="telemetry-pill" class="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-xs font-mono text-slate-700 cursor-pointer hover:bg-slate-200 transition-colors" title="Click to view health telemetry">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span class="font-bold">10/10 Online</span>
                     </div>
 
                     <!-- Partner With Us CTA -->
-                    <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 hover:bg-brand-coral text-white text-xs font-semibold tracking-wide transition-all shadow-xs">
+                    <a href="#contact" class="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-brand-coral text-white text-xs sm:text-sm font-bold tracking-wide transition-all shadow-xs">
                         <span>Partner With Us</span>
-                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
                     </a>
 
-                    <!-- Mobile Menu Button -->
-                    <button id="mobile-menu-btn" class="lg:hidden p-2 text-slate-600 hover:text-slate-900 focus:outline-none" aria-label="Toggle menu">
-                        <i class="fa-solid fa-bars text-lg"></i>
+                    <!-- Mobile Menu Button (Accessible, large touch target) -->
+                    <button id="mobile-menu-btn" class="lg:hidden w-11 h-11 rounded-xl flex items-center justify-center text-slate-700 hover:text-slate-900 hover:bg-slate-100 transition-colors focus:outline-none" aria-label="Toggle navigation menu" aria-expanded="false">
+                        <i class="fa-solid fa-bars text-lg transition-transform"></i>
                     </button>
                 </div>
             </div>
         </div>
 
+        <!-- Mobile Backdrop Overlay -->
+        <div id="mobile-menu-backdrop" class="hidden fixed inset-0 top-[80px] bg-slate-950/50 backdrop-blur-xs z-30 transition-opacity"></div>
+
         <!-- Mobile Drawer -->
-        <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white/98 backdrop-blur-xl px-6 py-5 transition-all shadow-lg">
-            <div class="flex flex-col gap-3 font-sans text-sm font-semibold">
-                <a href="#matrix" class="mobile-link text-slate-600 hover:text-slate-900 py-2 border-b border-slate-100">The 10 Rings Matrix</a>
-                <a href="#pipeline" class="mobile-link text-slate-600 hover:text-slate-900 py-2 border-b border-slate-100">Active Pipeline (6 Projects)</a>
-                <a href="#upcoming" class="mobile-link text-slate-600 hover:text-slate-900 py-2 border-b border-slate-100 flex items-center justify-between">
-                    <span>Upcoming Research Directive</span>
-                    <span class="text-xs font-mono text-brand-coral bg-brand-coralLight px-2 py-0.5 rounded font-bold">Horizon</span>
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white/98 backdrop-blur-xl px-5 sm:px-6 py-5 transition-all shadow-2xl z-40 relative">
+            <div class="flex flex-col gap-2 font-sans text-base font-semibold">
+                <a href="#matrix" class="mobile-link text-slate-700 hover:text-brand-coral py-3 border-b border-slate-100 flex items-center justify-between">
+                    <span>The 10 Rings Architecture</span>
+                    <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
                 </a>
-                <a href="#workflow" class="mobile-link text-slate-600 hover:text-slate-900 py-2 border-b border-slate-100">Bio-Compute Cycle</a>
-                <a href="#founder" class="mobile-link text-slate-600 hover:text-slate-900 py-2 border-b border-slate-100">Leadership & Architect</a>
-                <a href="#contact" class="mobile-link text-slate-900 py-2 font-bold text-brand-coral">Initiate Institutional Inquiry →</a>
+                <a href="#pipeline" class="mobile-link text-slate-700 hover:text-brand-coral py-3 border-b border-slate-100 flex items-center justify-between">
+                    <span>Active Systems Pipeline (6)</span>
+                    <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+                <a href="#upcoming" class="mobile-link text-slate-700 hover:text-brand-coral py-3 border-b border-slate-100 flex items-center justify-between">
+                    <span>Upcoming Horizon Directive</span>
+                    <span class="text-xs font-mono text-brand-coral bg-brand-coralLight px-2 py-0.5 rounded-full font-bold">Horizon</span>
+                </a>
+                <a href="#workflow" class="mobile-link text-slate-700 hover:text-brand-coral py-3 border-b border-slate-100 flex items-center justify-between">
+                    <span>Bio-Compute Cycle</span>
+                    <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+                <a href="#founder" class="mobile-link text-slate-700 hover:text-brand-coral py-3 border-b border-slate-100 flex items-center justify-between">
+                    <span>Leadership & Architect</span>
+                    <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+                <a href="#contact" class="mobile-link text-brand-coral py-3 font-bold flex items-center justify-between">
+                    <span>Initiate Institutional Inquiry</span>
+                    <i class="fa-solid fa-arrow-right text-sm"></i>
+                </a>
             </div>
         </div>
     </header>
@@ -290,12 +316,12 @@
                         </div>
 
                         <!-- Main Display Headline -->
-                        <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-slate-900 leading-[1.12] mb-6">
+                        <h1 class="font-sans font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-slate-900 leading-[1.12] mb-6">
                             Where Deep Computation Meets <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-coral via-rose-600 to-amber-600">Programmable Biology.</span>
                         </h1>
 
                         <!-- Subtitle -->
-                        <p class="text-base sm:text-lg text-slate-600 font-sans leading-relaxed mb-8 max-w-xl">
+                        <p class="text-lg sm:text-xl text-slate-700 font-normal leading-relaxed mb-8 max-w-2xl">
                             <strong class="text-slate-900 font-semibold">THE TEN RINGS</strong> is an interdisciplinary frontier company engineering the operating system for living systems. We unite high-performance in-silico modeling, synthetic genomics, and precision biomanufacturing to solve global challenges across human health, bio-materials, and planetary ecosystems.
                         </p>
 
@@ -389,9 +415,7 @@
                             <span class="w-1.5 h-1.5 rounded-full bg-brand-coral"></span>
                             System Topology & Interconnections
                         </div>
-                        <h2 class="font-display font-bold text-3xl sm:text-4xl text-slate-900 tracking-tight">
-                            The Ten Rings Architecture Matrix
-                        </h2>
+                        <h2 class="font-sans font-extrabold text-3xl sm:text-4xl lg:text-5xl text-slate-900 tracking-tight">The Ten Rings Architecture Matrix</h2>
                     </div>
                     <p class="text-slate-600 text-sm font-sans max-w-md">
                         A unified, closed-loop compute matrix. Click or hover any ring below to inspect its data flow, biological transformation, and connected pipeline initiatives.
@@ -408,9 +432,9 @@
                                 <span class="font-mono text-xs font-bold text-brand-coral bg-brand-coralLight px-2 py-0.5 rounded">R-01</span>
                                 <i class="fa-solid fa-code text-slate-400 text-xs"></i>
                             </div>
-                            <h4 class="font-display font-bold text-sm text-slate-900 truncate">Bioinformatics</h4>
+                            <h4 class="font-sans font-bold text-sm sm:text-base text-slate-900 truncate">Bioinformatics</h4>
                         </div>
-                        <div class="text-[11px] text-slate-500 font-mono mt-1 truncate">Sequence Transformers</div>
+                        <div class="text-xs text-slate-500 font-mono mt-1 truncate">Sequence Transformers</div>
                     </div>
 
                     <!-- R-02 -->
@@ -420,9 +444,9 @@
                                 <span class="font-mono text-xs font-bold text-sky-600 bg-sky-50 px-2 py-0.5 rounded">R-02</span>
                                 <i class="fa-solid fa-microchip text-slate-400 text-xs"></i>
                             </div>
-                            <h4 class="font-display font-bold text-sm text-slate-900 truncate">Computational Bio</h4>
+                            <h4 class="font-sans font-bold text-sm sm:text-base text-slate-900 truncate">Computational Bio</h4>
                         </div>
-                        <div class="text-[11px] text-slate-500 font-mono mt-1 truncate">Cellular Digital Twins</div>
+                        <div class="text-xs text-slate-500 font-mono mt-1 truncate">Cellular Digital Twins</div>
                     </div>
 
                     <!-- R-03 -->
@@ -432,9 +456,9 @@
                                 <span class="font-mono text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">R-03</span>
                                 <i class="fa-solid fa-heart-pulse text-slate-400 text-xs"></i>
                             </div>
-                            <h4 class="font-display font-bold text-sm text-slate-900 truncate">Precision Health</h4>
+                            <h4 class="font-sans font-bold text-sm sm:text-base text-slate-900 truncate">Precision Health</h4>
                         </div>
-                        <div class="text-[11px] text-slate-500 font-mono mt-1 truncate">Synthetic Immunology</div>
+                        <div class="text-xs text-slate-500 font-mono mt-1 truncate">Synthetic Immunology</div>
                     </div>
 
                     <!-- R-04 -->
@@ -444,9 +468,9 @@
                                 <span class="font-mono text-xs font-bold text-teal-600 bg-teal-50 px-2 py-0.5 rounded">R-04</span>
                                 <i class="fa-solid fa-wheat-awn text-slate-400 text-xs"></i>
                             </div>
-                            <h4 class="font-display font-bold text-sm text-slate-900 truncate">Agro-Genomics</h4>
+                            <h4 class="font-sans font-bold text-sm sm:text-base text-slate-900 truncate">Agro-Genomics</h4>
                         </div>
-                        <div class="text-[11px] text-slate-500 font-mono mt-1 truncate">Rhizosphere Biomes</div>
+                        <div class="text-xs text-slate-500 font-mono mt-1 truncate">Rhizosphere Biomes</div>
                     </div>
 
                     <!-- R-05 -->
@@ -456,9 +480,9 @@
                                 <span class="font-mono text-xs font-bold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded">R-05</span>
                                 <i class="fa-solid fa-vial text-slate-400 text-xs"></i>
                             </div>
-                            <h4 class="font-display font-bold text-sm text-slate-900 truncate">Cell-Free Sensors</h4>
+                            <h4 class="font-sans font-bold text-sm sm:text-base text-slate-900 truncate">Cell-Free Sensors</h4>
                         </div>
-                        <div class="text-[11px] text-slate-500 font-mono mt-1 truncate">Molecular Switches</div>
+                        <div class="text-xs text-slate-500 font-mono mt-1 truncate">Molecular Switches</div>
                     </div>
 
                     <!-- R-06 -->
@@ -468,9 +492,9 @@
                                 <span class="font-mono text-xs font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded">R-06</span>
                                 <i class="fa-solid fa-cube text-slate-400 text-xs"></i>
                             </div>
-                            <h4 class="font-display font-bold text-sm text-slate-900 truncate">Bio-Polymers</h4>
+                            <h4 class="font-sans font-bold text-sm sm:text-base text-slate-900 truncate">Bio-Polymers</h4>
                         </div>
-                        <div class="text-[11px] text-slate-500 font-mono mt-1 truncate">Chitin & Cellulose</div>
+                        <div class="text-xs text-slate-500 font-mono mt-1 truncate">Chitin & Cellulose</div>
                     </div>
 
                     <!-- R-07 -->
@@ -480,9 +504,9 @@
                                 <span class="font-mono text-xs font-bold text-purple-600 bg-purple-50 px-2 py-0.5 rounded">R-07</span>
                                 <i class="fa-solid fa-hourglass-half text-slate-400 text-xs"></i>
                             </div>
-                            <h4 class="font-display font-bold text-sm text-slate-900 truncate">Cellular Longevity</h4>
+                            <h4 class="font-sans font-bold text-sm sm:text-base text-slate-900 truncate">Cellular Longevity</h4>
                         </div>
-                        <div class="text-[11px] text-slate-500 font-mono mt-1 truncate">Epigenetic Reversal</div>
+                        <div class="text-xs text-slate-500 font-mono mt-1 truncate">Epigenetic Reversal</div>
                     </div>
 
                     <!-- R-08 -->
@@ -492,9 +516,9 @@
                                 <span class="font-mono text-xs font-bold text-cyan-600 bg-cyan-50 px-2 py-0.5 rounded">R-08</span>
                                 <i class="fa-solid fa-server text-slate-400 text-xs"></i>
                             </div>
-                            <h4 class="font-display font-bold text-sm text-slate-900 truncate">Cloud Bio-Foundry</h4>
+                            <h4 class="font-sans font-bold text-sm sm:text-base text-slate-900 truncate">Cloud Bio-Foundry</h4>
                         </div>
-                        <div class="text-[11px] text-slate-500 font-mono mt-1 truncate">Robotic Liquid Arrays</div>
+                        <div class="text-xs text-slate-500 font-mono mt-1 truncate">Robotic Liquid Arrays</div>
                     </div>
 
                     <!-- R-09 -->
@@ -504,9 +528,9 @@
                                 <span class="font-mono text-xs font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded">R-09</span>
                                 <i class="fa-solid fa-shield-virus text-slate-400 text-xs"></i>
                             </div>
-                            <h4 class="font-display font-bold text-sm text-slate-900 truncate">Bio-Surveillance</h4>
+                            <h4 class="font-sans font-bold text-sm sm:text-base text-slate-900 truncate">Bio-Surveillance</h4>
                         </div>
-                        <div class="text-[11px] text-slate-500 font-mono mt-1 truncate">Global Zoonotic Grid</div>
+                        <div class="text-xs text-slate-500 font-mono mt-1 truncate">Global Zoonotic Grid</div>
                     </div>
 
                     <!-- R-10 -->
@@ -516,9 +540,9 @@
                                 <span class="font-mono text-xs font-bold text-slate-700 bg-slate-100 px-2 py-0.5 rounded">R-10</span>
                                 <i class="fa-solid fa-scale-balanced text-slate-400 text-xs"></i>
                             </div>
-                            <h4 class="font-display font-bold text-sm text-slate-900 truncate">Bio-Governance</h4>
+                            <h4 class="font-sans font-bold text-sm sm:text-base text-slate-900 truncate">Bio-Governance</h4>
                         </div>
-                        <div class="text-[11px] text-slate-500 font-mono mt-1 truncate">Open Commons License</div>
+                        <div class="text-xs text-slate-500 font-mono mt-1 truncate">Open Commons License</div>
                     </div>
 
                 </div>
@@ -536,11 +560,11 @@
                                 <span class="text-xs font-mono text-slate-500">Active Feedback Ingestion</span>
                             </div>
 
-                            <h3 id="inspector-title" class="font-display font-bold text-2xl text-slate-900">
+                            <h3 id="inspector-title" class="font-sans font-extrabold text-2xl sm:text-3xl text-slate-900 leading-snug">
                                 High-Throughput Sequence Transformers & Metagenomic Search
                             </h3>
 
-                            <p id="inspector-desc" class="text-sm text-slate-600 font-sans leading-relaxed">
+                            <p id="inspector-desc" class="text-base sm:text-lg text-slate-700 font-normal leading-relaxed">
                                 Ring 01 processes raw fastq/fasta sequence reads through distributed transformer models trained on over 4.2 billion metagenomic sequences, generating structural and functional annotations in real time.
                             </p>
 
@@ -598,11 +622,14 @@
                     <div>
                         <div class="text-xs font-mono text-brand-coral uppercase tracking-widest mb-2 flex items-center gap-2 font-bold">
                             <span class="w-1.5 h-1.5 rounded-full bg-brand-coral"></span>
-                            Production & Operational Deployments
+                            Production &amp; Operational Deployments &middot; 6 Engines
                         </div>
-                        <h2 class="font-display font-bold text-3xl sm:text-4xl text-slate-900 tracking-tight">
+                        <h2 class="font-sans font-extrabold text-3xl sm:text-4xl lg:text-5xl text-slate-900 tracking-tight">
                             Active Systems Pipeline
                         </h2>
+                        <p class="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-3xl mt-3">
+                            Six production-grade computational bio-engines engineered to translate genomic code into real-world therapeutics, ecological restoration, and planetary resilience.
+                        </p>
                     </div>
 
                     <!-- Search & Filter Controls -->
@@ -623,244 +650,296 @@
                 </div>
 
                 <!-- 6 Pipeline Cards with Strict Horizontal Alignment -->
-                <div id="pipeline-cards-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-                    
+                <div id="pipeline-cards-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
                     <!-- 1. PROJECT HELIX-CORE -->
-                    <div id="card-helix-core" class="startup-card p-6 flex flex-col justify-between h-full" data-category="genomics" data-search="project helix-core foundational bio-compute r-01 r-02 protein transformer metagenomes fastq">
+                    <div id="card-helix-core" class="startup-card p-6 sm:p-7 flex flex-col justify-between h-full group" data-category="genomics" data-search="project helix-core foundational bio-compute r-01 r-02 protein transformer metagenomes fastq">
                         <div>
                             <!-- Uniform Badge Row (h-8) -->
                             <div class="flex items-center justify-between mb-3.5 h-8">
-                                <span class="px-2.5 py-1 rounded-full bg-slate-900 text-white font-mono text-[11px] font-bold flex items-center gap-1.5">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                <span class="px-3 py-1 rounded-full bg-slate-900 text-white font-mono text-xs font-bold flex items-center gap-1.5">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                                     <span>Production Core</span>
                                 </span>
-                                <span class="font-mono text-xs text-slate-500 font-semibold">R-01 · R-02</span>
+                                <span class="font-mono text-xs text-slate-500 font-semibold">R-01 &middot; R-02</span>
                             </div>
 
                             <!-- Standardized Title Height (h-16) -->
-                            <div class="h-16 flex items-center mb-2.5">
-                                <h3 class="font-display font-bold text-xl text-slate-900 leading-snug line-clamp-2">PROJECT HELIX-CORE</h3>
+                            <div class="min-h-[4rem] flex items-center mb-3">
+                                <h3 class="font-sans font-extrabold text-xl sm:text-2xl text-slate-900 group-hover:text-brand-coral transition-colors leading-tight">PROJECT HELIX-CORE</h3>
                             </div>
 
-                            <!-- Standardized Description Height (h-16) -->
-                            <div class="h-16 mb-4">
-                                <p class="text-xs text-slate-600 font-sans leading-relaxed line-clamp-3">
+                            <!-- Standardized Description with Dedicated Defining Line -->
+                            <div class="min-h-[6.5rem] mb-5">
+                                <p class="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
                                     Foundational biological compute substrate integrating protein language transformers, de-novo plasmid compilation, and kinetic cellular simulation into a unified API.
+                                </p>
+                                <p class="mt-2 text-xs sm:text-sm font-semibold text-brand-coral flex items-start gap-1.5">
+                                    <i class="fa-solid fa-bullseye text-[11px] mt-1 shrink-0"></i>
+                                    <span>The central biological operating system translating raw genomic sequences into functional, programmable software at scale.</span>
                                 </p>
                             </div>
 
-                            <!-- Uniform Metric Box (h-20) -->
+                            <!-- Uniform Metric Box -->
                             <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 font-mono text-xs space-y-1.5 mb-5 h-20 flex flex-col justify-center">
                                 <div class="flex justify-between items-center">
-                                    <span class="text-slate-500 text-[11px]">Training Metagenomes:</span>
-                                    <strong class="text-brand-coral font-bold">4.2B+ Sequences</strong>
+                                    <span class="text-slate-500 text-xs">Training Corpus:</span>
+                                    <strong class="text-brand-coral font-bold text-xs sm:text-sm">4.2B+ Sequences</strong>
                                 </div>
                                 <div class="flex justify-between items-center">
-                                    <span class="text-slate-500 text-[11px]">In-Silico Throughput:</span>
-                                    <strong class="text-slate-900 font-bold">120,000 bps / sec</strong>
+                                    <span class="text-slate-500 text-xs">In-Silico Throughput:</span>
+                                    <strong class="text-slate-900 font-bold text-xs sm:text-sm">120,000 bps / sec</strong>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Bottom-Aligned Button -->
-                        <button class="open-modal-btn w-full py-2.5 rounded-xl bg-slate-900 hover:bg-brand-coral text-white font-semibold text-xs tracking-wider transition-all flex items-center justify-center gap-2 shadow-2xs mt-auto" data-project="helix-core">
+                        <button class="open-modal-btn w-full py-3 rounded-xl bg-slate-900 hover:bg-brand-coral text-white font-bold text-xs sm:text-sm tracking-wider transition-all flex items-center justify-center gap-2 shadow-xs mt-auto cursor-pointer" data-project="helix-core">
                             <span>Deep Dive Technical Spec</span>
-                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
                         </button>
                     </div>
 
                     <!-- 2. PROJECT AEGIS -->
-                    <div id="card-aegis" class="startup-card p-6 flex flex-col justify-between h-full" data-category="planetary" data-search="project aegis distributed biosurveillance r-02 r-09 viral mutation zoonotic sensor">
+                    <div id="card-aegis" class="startup-card p-6 sm:p-7 flex flex-col justify-between h-full group" data-category="genomics" data-search="project aegis viral biosurveillance r-03 r-05 pandemic defense topology rna">
                         <div>
+                            <!-- Uniform Badge Row (h-8) -->
                             <div class="flex items-center justify-between mb-3.5 h-8">
-                                <span class="px-2.5 py-1 rounded-full bg-purple-50 border border-purple-200 text-purple-700 font-mono text-[11px] font-bold">
-                                    <i class="fa-solid fa-satellite-dish mr-1"></i> Pre-Clinical
+                                <span class="px-3 py-1 rounded-full bg-slate-900 text-white font-mono text-xs font-bold flex items-center gap-1.5">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                                    <span>Live Surveillance</span>
                                 </span>
-                                <span class="font-mono text-xs text-slate-500 font-semibold">R-02 · R-09</span>
+                                <span class="font-mono text-xs text-slate-500 font-semibold">R-03 &middot; R-05</span>
                             </div>
 
-                            <div class="h-16 flex items-center mb-2.5">
-                                <h3 class="font-display font-bold text-xl text-slate-900 leading-snug line-clamp-2">PROJECT AEGIS</h3>
+                            <!-- Standardized Title Height -->
+                            <div class="min-h-[4rem] flex items-center mb-3">
+                                <h3 class="font-sans font-extrabold text-xl sm:text-2xl text-slate-900 group-hover:text-brand-coral transition-colors leading-tight">PROJECT AEGIS</h3>
                             </div>
 
-                            <div class="h-16 mb-4">
-                                <p class="text-xs text-slate-600 font-sans leading-relaxed line-clamp-3">
+                            <!-- Standardized Description with Dedicated Defining Line -->
+                            <div class="min-h-[6.5rem] mb-5">
+                                <p class="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
                                     Autonomous distributed biosurveillance mesh utilizing synthetic immune sensors and topological viral models to forecast zoonotic mutations in real time.
                                 </p>
+                                <p class="mt-2 text-xs sm:text-sm font-semibold text-brand-coral flex items-start gap-1.5">
+                                    <i class="fa-solid fa-bullseye text-[11px] mt-1 shrink-0"></i>
+                                    <span>A planetary early-warning defense network that detects, models, and intercepts pathogen spillover before human outbreaks occur.</span>
+                                </p>
                             </div>
 
+                            <!-- Uniform Metric Box -->
                             <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 font-mono text-xs space-y-1.5 mb-5 h-20 flex flex-col justify-center">
                                 <div class="flex justify-between items-center">
-                                    <span class="text-slate-500 text-[11px]">Detection Latency:</span>
-                                    <strong class="text-purple-700 font-bold">&lt; 15 Minutes</strong>
+                                    <span class="text-slate-500 text-xs">Mutation Forecast Window:</span>
+                                    <strong class="text-brand-coral font-bold text-xs sm:text-sm">90 Days Advance</strong>
                                 </div>
                                 <div class="flex justify-between items-center">
-                                    <span class="text-slate-500 text-[11px]">Prediction Accuracy:</span>
-                                    <strong class="text-slate-900 font-bold">99.9% AUC</strong>
+                                    <span class="text-slate-500 text-xs">Sensor Field Mesh:</span>
+                                    <strong class="text-slate-900 font-bold text-xs sm:text-sm">1,400+ Nodes</strong>
                                 </div>
                             </div>
                         </div>
 
-                        <button class="open-modal-btn w-full py-2.5 rounded-xl bg-slate-900 hover:bg-brand-coral text-white font-semibold text-xs tracking-wider transition-all flex items-center justify-center gap-2 shadow-2xs mt-auto" data-project="aegis">
+                        <!-- Bottom-Aligned Button -->
+                        <button class="open-modal-btn w-full py-3 rounded-xl bg-slate-900 hover:bg-brand-coral text-white font-bold text-xs sm:text-sm tracking-wider transition-all flex items-center justify-center gap-2 shadow-xs mt-auto cursor-pointer" data-project="aegis">
                             <span>Deep Dive Technical Spec</span>
-                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
                         </button>
                     </div>
 
-                    <!-- 3. NGS READ QUALITY CONTROL PIPELINE -->
-                    <div id="card-ngs-qc" class="startup-card p-6 flex flex-col justify-between h-full" data-category="genomics" data-search="ngs read quality control pipeline r-01 r-05 sequencing illumina pacbio nanopore q40">
+                    <!-- 3. NGS Read Quality Control Pipeline -->
+                    <div id="card-ngs-qc" class="startup-card p-6 sm:p-7 flex flex-col justify-between h-full group" data-category="genomics" data-search="ngs read quality control pipeline fastq phred trimming error correction illumina pacbio nanopore r-01">
                         <div>
+                            <!-- Uniform Badge Row (h-8) -->
                             <div class="flex items-center justify-between mb-3.5 h-8">
-                                <span class="px-2.5 py-1 rounded-full bg-sky-50 border border-sky-200 text-sky-700 font-mono text-[11px] font-bold">
-                                    <i class="fa-solid fa-filter mr-1"></i> Production Pipeline
+                                <span class="px-3 py-1 rounded-full bg-slate-900 text-white font-mono text-xs font-bold flex items-center gap-1.5">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                                    <span>Bioinformatics Tool</span>
                                 </span>
-                                <span class="font-mono text-xs text-slate-500 font-semibold">R-01 · R-05</span>
+                                <span class="font-mono text-xs text-slate-500 font-semibold">R-01 &middot; R-02</span>
                             </div>
 
-                            <div class="h-16 flex items-center mb-2.5">
-                                <h3 class="font-display font-bold text-xl text-slate-900 leading-snug line-clamp-2">NGS Read Quality Control Pipeline</h3>
+                            <!-- Standardized Title Height -->
+                            <div class="min-h-[4rem] flex items-center mb-3">
+                                <h3 class="font-sans font-extrabold text-xl sm:text-2xl text-slate-900 group-hover:text-brand-coral transition-colors leading-tight">NGS Read Quality Control Pipeline</h3>
                             </div>
 
-                            <div class="h-16 mb-4">
-                                <p class="text-xs text-slate-600 font-sans leading-relaxed line-clamp-3">
+                            <!-- Standardized Description with Dedicated Defining Line -->
+                            <div class="min-h-[6.5rem] mb-5">
+                                <p class="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
                                     Automated high-throughput Next-Gen Sequencing read preprocessing, Phred score trimming, adapter excision, and deep learning error correction for Illumina, PacBio, and Nanopore.
                                 </p>
+                                <p class="mt-2 text-xs sm:text-sm font-semibold text-brand-coral flex items-start gap-1.5">
+                                    <i class="fa-solid fa-bullseye text-[11px] mt-1 shrink-0"></i>
+                                    <span>An ultra-fast bioinformatics pipeline guaranteeing pristine, noise-free Q40+ genomic data for downstream clinical and synthetic biology applications.</span>
+                                </p>
                             </div>
 
+                            <!-- Uniform Metric Box -->
                             <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 font-mono text-xs space-y-1.5 mb-5 h-20 flex flex-col justify-center">
                                 <div class="flex justify-between items-center">
-                                    <span class="text-slate-500 text-[11px]">Base Quality Score:</span>
-                                    <strong class="text-sky-700 font-bold">Q40+ (&gt;99.99%)</strong>
+                                    <span class="text-slate-500 text-xs">Quality Threshold:</span>
+                                    <strong class="text-brand-coral font-bold text-xs sm:text-sm">Phred Q40+ Accuracy</strong>
                                 </div>
                                 <div class="flex justify-between items-center">
-                                    <span class="text-slate-500 text-[11px]">Processing Velocity:</span>
-                                    <strong class="text-slate-900 font-bold">1.8 TB / Hour</strong>
+                                    <span class="text-slate-500 text-xs">Pipeline Processing Speed:</span>
+                                    <strong class="text-slate-900 font-bold text-xs sm:text-sm">&lt; 14 min / 100GB</strong>
                                 </div>
                             </div>
                         </div>
 
-                        <button class="open-modal-btn w-full py-2.5 rounded-xl bg-slate-900 hover:bg-brand-coral text-white font-semibold text-xs tracking-wider transition-all flex items-center justify-center gap-2 shadow-2xs mt-auto" data-project="ngs-qc">
+                        <!-- Bottom-Aligned Button -->
+                        <button class="open-modal-btn w-full py-3 rounded-xl bg-slate-900 hover:bg-brand-coral text-white font-bold text-xs sm:text-sm tracking-wider transition-all flex items-center justify-center gap-2 shadow-xs mt-auto cursor-pointer" data-project="ngs-qc">
                             <span>Deep Dive Technical Spec</span>
-                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
                         </button>
                     </div>
 
-                    <!-- 4. COMPARATIVE GENOMIC ANALYSIS OF ESCHERICHIA COLI -->
-                    <div id="card-ecoli-analysis" class="startup-card p-6 flex flex-col justify-between h-full" data-category="genomics" data-search="comparative genomic analysis of escherichia coli r-01 r-03 e. coli amr pangenome hgt snp">
+                    <!-- 4. Comparative genomic analysis of Escherichia coli -->
+                    <div id="card-ecoli-analysis" class="startup-card p-6 sm:p-7 flex flex-col justify-between h-full group" data-category="genomics" data-search="comparative genomic analysis of escherichia coli pan-genome amr virulence hgt r-01 r-08">
                         <div>
+                            <!-- Uniform Badge Row (h-8) -->
                             <div class="flex items-center justify-between mb-3.5 h-8">
-                                <span class="px-2.5 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 font-mono text-[11px] font-bold">
-                                    <i class="fa-solid fa-dna mr-1"></i> Active Research
+                                <span class="px-3 py-1 rounded-full bg-slate-900 text-white font-mono text-xs font-bold flex items-center gap-1.5">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                                    <span>Pan-Genomics Core</span>
                                 </span>
-                                <span class="font-mono text-xs text-slate-500 font-semibold">R-01 · R-03</span>
+                                <span class="font-mono text-xs text-slate-500 font-semibold">R-01 &middot; R-08</span>
                             </div>
 
-                            <div class="h-16 flex items-center mb-2.5">
-                                <h3 class="font-display font-bold text-xl text-slate-900 leading-snug line-clamp-2">Comparative genomic analysis of Escherichia coli</h3>
+                            <!-- Standardized Title Height -->
+                            <div class="min-h-[4rem] flex items-center mb-3">
+                                <h3 class="font-sans font-extrabold text-xl sm:text-2xl text-slate-900 group-hover:text-brand-coral transition-colors leading-tight">Comparative genomic analysis of <em>E. coli</em></h3>
                             </div>
 
-                            <div class="h-16 mb-4">
-                                <p class="text-xs text-slate-600 font-sans leading-relaxed line-clamp-3">
+                            <!-- Standardized Description with Dedicated Defining Line -->
+                            <div class="min-h-[6.5rem] mb-5">
+                                <p class="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
                                     Pan-genomic comparative profiling of commensal, pathogenic, and multi-drug resistant <em>E. coli</em> strains, mapping horizontal gene transfer (HGT) and mobile AMR loci.
                                 </p>
+                                <p class="mt-2 text-xs sm:text-sm font-semibold text-brand-coral flex items-start gap-1.5">
+                                    <i class="fa-solid fa-bullseye text-[11px] mt-1 shrink-0"></i>
+                                    <span>A pan-genomic intelligence framework tracking antimicrobial resistance mutations to guide targeted next-generation antimicrobial engineering.</span>
+                                </p>
                             </div>
 
+                            <!-- Uniform Metric Box -->
                             <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 font-mono text-xs space-y-1.5 mb-5 h-20 flex flex-col justify-center">
                                 <div class="flex justify-between items-center">
-                                    <span class="text-slate-500 text-[11px]">Strains Analyzed:</span>
-                                    <strong class="text-indigo-700 font-bold">15,000+ Isolates</strong>
+                                    <span class="text-slate-500 text-xs">Strains Profiled:</span>
+                                    <strong class="text-brand-coral font-bold text-xs sm:text-sm">2,850+ Isolates</strong>
                                 </div>
                                 <div class="flex justify-between items-center">
-                                    <span class="text-slate-500 text-[11px]">Resolution:</span>
-                                    <strong class="text-slate-900 font-bold">Sub-SNP Precision</strong>
+                                    <span class="text-slate-500 text-xs">AMR Determinants:</span>
+                                    <strong class="text-slate-900 font-bold text-xs sm:text-sm">410 Loci Mapped</strong>
                                 </div>
                             </div>
                         </div>
 
-                        <button class="open-modal-btn w-full py-2.5 rounded-xl bg-slate-900 hover:bg-brand-coral text-white font-semibold text-xs tracking-wider transition-all flex items-center justify-center gap-2 shadow-2xs mt-auto" data-project="ecoli-analysis">
+                        <!-- Bottom-Aligned Button -->
+                        <button class="open-modal-btn w-full py-3 rounded-xl bg-slate-900 hover:bg-brand-coral text-white font-bold text-xs sm:text-sm tracking-wider transition-all flex items-center justify-center gap-2 shadow-xs mt-auto cursor-pointer" data-project="ecoli-analysis">
                             <span>Deep Dive Technical Spec</span>
-                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
                         </button>
                     </div>
 
-                    <!-- 5. HARIYALI 2.0 -->
-                    <div id="card-hariyali" class="startup-card p-6 flex flex-col justify-between h-full" data-category="planetary" data-search="hariyali 2.0 soil desertification microbiome r-01 r-04 water retention nitrogen crop">
+                    <!-- 5. Hariyali 2.0 -->
+                    <div id="card-hariyali" class="startup-card p-6 sm:p-7 flex flex-col justify-between h-full group" data-category="planetary" data-search="hariyali 2.0 agro-genomics rhizosphere soil restoration desertification drought r-04 r-09">
                         <div>
+                            <!-- Uniform Badge Row (h-8) -->
                             <div class="flex items-center justify-between mb-3.5 h-8">
-                                <span class="px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-mono text-[11px] font-bold">
-                                    <i class="fa-solid fa-seedling mr-1"></i> Field Trials Active
+                                <span class="px-3 py-1 rounded-full bg-slate-900 text-white font-mono text-xs font-bold flex items-center gap-1.5">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                                    <span>Planetary Initiative</span>
                                 </span>
-                                <span class="font-mono text-xs text-slate-500 font-semibold">R-01 · R-04</span>
+                                <span class="font-mono text-xs text-slate-500 font-semibold">R-04 &middot; R-09</span>
                             </div>
 
-                            <div class="h-16 flex items-center mb-2.5">
-                                <h3 class="font-display font-bold text-xl text-slate-900 leading-snug line-clamp-2">Hariyali 2.0</h3>
+                            <!-- Standardized Title Height -->
+                            <div class="min-h-[4rem] flex items-center mb-3">
+                                <h3 class="font-sans font-extrabold text-xl sm:text-2xl text-slate-900 group-hover:text-brand-coral transition-colors leading-tight">Hariyali 2.0</h3>
                             </div>
 
-                            <div class="h-16 mb-4">
-                                <p class="text-xs text-slate-600 font-sans leading-relaxed line-clamp-3">
+                            <!-- Standardized Description with Dedicated Defining Line -->
+                            <div class="min-h-[6.5rem] mb-5">
+                                <p class="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
                                     Reversing desertification in arid agricultural regions through synthetic extremophile microbiomes that trap matric water molecules at crop roots and bind atmospheric nitrogen.
                                 </p>
-                            </div>
-
-                            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 font-mono text-xs space-y-1.5 mb-5 h-20 flex flex-col justify-center">
-                                <div class="flex justify-between items-center">
-                                    <span class="text-slate-500 text-[11px]">Water Retention:</span>
-                                    <strong class="text-emerald-700 font-bold">+412% over Basal</strong>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-slate-500 text-[11px]">Nitrogen Fixation:</span>
-                                    <strong class="text-slate-900 font-bold">400x Wild-Type</strong>
-                                </div>
-                            </div>
-                        </div>
-
-                        <button class="open-modal-btn w-full py-2.5 rounded-xl bg-slate-900 hover:bg-brand-coral text-white font-semibold text-xs tracking-wider transition-all flex items-center justify-center gap-2 shadow-2xs mt-auto" data-project="hariyali">
-                            <span>Deep Dive Technical Spec</span>
-                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                        </button>
-                    </div>
-
-                    <!-- 6. GUTEK -->
-                    <div id="card-gutek" class="startup-card p-6 flex flex-col justify-between h-full" data-category="planetary" data-search="gutek biodegradable biopolymer plastic r-01 r-06 tensile cellulose carbon negative">
-                        <div>
-                            <div class="flex items-center justify-between mb-3.5 h-8">
-                                <span class="px-2.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-mono text-[11px] font-bold">
-                                    <i class="fa-solid fa-cube mr-1"></i> Pilot Scale
-                                </span>
-                                <span class="font-mono text-xs text-slate-500 font-semibold">R-01 · R-06</span>
-                            </div>
-
-                            <div class="h-16 flex items-center mb-2.5">
-                                <h3 class="font-display font-bold text-xl text-slate-900 leading-snug line-clamp-2">Gutek</h3>
-                            </div>
-
-                            <div class="h-16 mb-4">
-                                <p class="text-xs text-slate-600 font-sans leading-relaxed line-clamp-3">
-                                    Eliminating petrochemical plastic dependence via genetically optimized microbial chassis that convert agricultural biomass into 100% biodegradable crystalline polymers.
+                                <p class="mt-2 text-xs sm:text-sm font-semibold text-brand-coral flex items-start gap-1.5">
+                                    <i class="fa-solid fa-bullseye text-[11px] mt-1 shrink-0"></i>
+                                    <span>A synthetic biology reforestation engine reviving degraded arid lands, accelerating crop yield, and locking moisture in drought zones.</span>
                                 </p>
                             </div>
 
+                            <!-- Uniform Metric Box -->
                             <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 font-mono text-xs space-y-1.5 mb-5 h-20 flex flex-col justify-center">
                                 <div class="flex justify-between items-center">
-                                    <span class="text-slate-500 text-[11px]">Tensile Strength:</span>
-                                    <strong class="text-amber-700 font-bold">245 MPa</strong>
+                                    <span class="text-slate-500 text-xs">Soil Water Retention:</span>
+                                    <strong class="text-brand-coral font-bold text-xs sm:text-sm">+38% Moisture</strong>
                                 </div>
                                 <div class="flex justify-between items-center">
-                                    <span class="text-slate-500 text-[11px]">Carbon Footprint:</span>
-                                    <strong class="text-emerald-700 font-bold">Net-Negative (-1.2 kg)</strong>
+                                    <span class="text-slate-500 text-xs">Field Test Validation:</span>
+                                    <strong class="text-slate-900 font-bold text-xs sm:text-sm">4,500 Hectares</strong>
                                 </div>
                             </div>
                         </div>
 
-                        <button class="open-modal-btn w-full py-2.5 rounded-xl bg-slate-900 hover:bg-brand-coral text-white font-semibold text-xs tracking-wider transition-all flex items-center justify-center gap-2 shadow-2xs mt-auto" data-project="gutek">
+                        <!-- Bottom-Aligned Button -->
+                        <button class="open-modal-btn w-full py-3 rounded-xl bg-slate-900 hover:bg-brand-coral text-white font-bold text-xs sm:text-sm tracking-wider transition-all flex items-center justify-center gap-2 shadow-xs mt-auto cursor-pointer" data-project="hariyali">
                             <span>Deep Dive Technical Spec</span>
-                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+
+                    <!-- 6. Gutek -->
+                    <div id="card-gutek" class="startup-card p-6 sm:p-7 flex flex-col justify-between h-full group" data-category="planetary" data-search="gutek biodegradable biopolymer chitin bacterial cellulose circular bioeconomy r-06 r-09">
+                        <div>
+                            <!-- Uniform Badge Row (h-8) -->
+                            <div class="flex items-center justify-between mb-3.5 h-8">
+                                <span class="px-3 py-1 rounded-full bg-slate-900 text-white font-mono text-xs font-bold flex items-center gap-1.5">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                                    <span>Bio-Industrial Core</span>
+                                </span>
+                                <span class="font-mono text-xs text-slate-500 font-semibold">R-06 &middot; R-09</span>
+                            </div>
+
+                            <!-- Standardized Title Height -->
+                            <div class="min-h-[4rem] flex items-center mb-3">
+                                <h3 class="font-sans font-extrabold text-xl sm:text-2xl text-slate-900 group-hover:text-brand-coral transition-colors leading-tight">Gutek</h3>
+                            </div>
+
+                            <!-- Standardized Description with Dedicated Defining Line -->
+                            <div class="min-h-[6.5rem] mb-5">
+                                <p class="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
+                                    Eliminating petrochemical plastic dependence via genetically optimized microbial chassis that convert agricultural biomass into 100% biodegradable crystalline polymers.
+                                </p>
+                                <p class="mt-2 text-xs sm:text-sm font-semibold text-brand-coral flex items-start gap-1.5">
+                                    <i class="fa-solid fa-bullseye text-[11px] mt-1 shrink-0"></i>
+                                    <span>A planetary biomanufacturing breakthrough replacing fossil fuel plastics with scalable, marine-degradable microbial biopolymers.</span>
+                                </p>
+                            </div>
+
+                            <!-- Uniform Metric Box -->
+                            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 font-mono text-xs space-y-1.5 mb-5 h-20 flex flex-col justify-center">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-slate-500 text-xs">Marine Degradation Rate:</span>
+                                    <strong class="text-brand-coral font-bold text-xs sm:text-sm">180 Days Marine</strong>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-slate-500 text-xs">Tensile Yield Strength:</span>
+                                    <strong class="text-slate-900 font-bold text-xs sm:text-sm">48.2 MPa (Rigid)</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bottom-Aligned Button -->
+                        <button class="open-modal-btn w-full py-3 rounded-xl bg-slate-900 hover:bg-brand-coral text-white font-bold text-xs sm:text-sm tracking-wider transition-all flex items-center justify-center gap-2 shadow-xs mt-auto cursor-pointer" data-project="gutek">
+                            <span>Deep Dive Technical Spec</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
                         </button>
                     </div>
 
                 </div>
-
             </div>
         </section>
 
@@ -1083,19 +1162,19 @@
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10 pb-6 border-b border-slate-200">
                         <button class="workflow-tab-btn active p-4 rounded-2xl border text-left transition-all bg-slate-900 text-white border-slate-900 shadow-sm" data-step="0">
                             <div class="font-mono text-xs opacity-70 mb-1">Phase 01</div>
-                            <div class="font-display font-bold text-sm sm:text-base">In-Silico Discovery</div>
+                            <div class="font-sans font-bold text-sm sm:text-base">In-Silico Discovery</div>
                         </button>
                         <button class="workflow-tab-btn p-4 rounded-2xl border text-left transition-all bg-white text-slate-700 border-slate-200 hover:border-slate-300" data-step="1">
                             <div class="font-mono text-xs opacity-70 mb-1">Phase 02</div>
-                            <div class="font-display font-bold text-sm sm:text-base">Genetic Circuit Synth</div>
+                            <div class="font-sans font-bold text-sm sm:text-base">Genetic Circuit Synth</div>
                         </button>
                         <button class="workflow-tab-btn p-4 rounded-2xl border text-left transition-all bg-white text-slate-700 border-slate-200 hover:border-slate-300" data-step="2">
                             <div class="font-mono text-xs opacity-70 mb-1">Phase 03</div>
-                            <div class="font-display font-bold text-sm sm:text-base">Robotic Bio-Foundry</div>
+                            <div class="font-sans font-bold text-sm sm:text-base">Robotic Bio-Foundry</div>
                         </button>
                         <button class="workflow-tab-btn p-4 rounded-2xl border text-left transition-all bg-white text-slate-700 border-slate-200 hover:border-slate-300" data-step="3">
                             <div class="font-mono text-xs opacity-70 mb-1">Phase 04</div>
-                            <div class="font-display font-bold text-sm sm:text-base">Planetary Deployment</div>
+                            <div class="font-sans font-bold text-sm sm:text-base">Planetary Deployment</div>
                         </button>
                     </div>
 
@@ -1183,10 +1262,8 @@
                         <span class="w-1.5 h-1.5 rounded-full bg-brand-coral"></span>
                         Architect & Vision
                     </div>
-                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-slate-900 tracking-tight">
-                        Leadership & Institutional Partnerships
-                    </h2>
-                    <p class="text-slate-600 text-sm font-sans mt-2">
+                    <h2 class="font-sans font-extrabold text-3xl sm:text-4xl lg:text-5xl text-slate-900 tracking-tight">Leadership & Institutional Partnerships</h2>
+                    <p class="text-base sm:text-lg text-slate-600 font-normal leading-relaxed mt-2">
                         THE TEN RINGS operates at the intersection of open-source science and venture-scale deep technology. We welcome research fellowships, institutional grants, and industrial scale partnerships.
                     </p>
                 </div>
@@ -1207,7 +1284,7 @@
                                 </div>
                             </div>
 
-                            <p class="text-sm text-slate-600 font-sans leading-relaxed mb-6">
+                            <p class="text-base text-slate-700 font-normal leading-relaxed mb-6">
                                 Systems architect and computational biology engineer focused on accelerating open planetary resilience. Bridging high-performance computing, synthetic genomics, and bio-industrial manufacturing into unified, open-access frameworks.
                             </p>
 
